@@ -1,39 +1,55 @@
 <script setup lang="ts">
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-
 import {
-  Paintbrush,
-  MessageCircle,
   TabletSmartphone,
   BadgeCheck,
   Goal,
   PictureInPicture,
+  Paintbrush,
   MousePointerClick,
+  MessageCircle,
   Newspaper,
 } from "lucide-vue-next";
 
-interface FeaturesProps {
+interface FeatureProps {
   icon: string;
   title: string;
   description: string;
 }
 
-const featureList: FeaturesProps[] = [
+const featureList: FeatureProps[] = [
   {
     icon: "tabletSmartphone",
-    title: "Dual Deployment",
+    title: "Responsive Design",
     description:
-      "Lakukan hosting sendiri atau pilih layanan cloud kami, sesuai dengan kebutuhan Anda.",
+      "Desain yang responsif dan mudah digunakan di berbagai perangkat.",
   },
   {
     icon: "badgeCheck",
-    title: "API Whatsapp Resmi",
+    title: "Meta API Integration",
     description:
-      "Kami adalah platform yang memiliki API Whatsapp resmi dari Meta, sehingga Anda dapat mengintegrasikan dengan mudah.",
+      "Integrasi langsung dengan API Meta untuk WhatsApp Business.",
   },
   {
     icon: "goal",
-    title: "Top-up API Credit",
+    title: "Goal Tracking",
+    description:
+      "Lacak tujuan bisnis Anda dengan mudah dan real-time.",
+  },
+  {
+    icon: "messageCircle",
+    title: "Auto Reply",
+    description:
+      "Balas otomatis dengan AI yang cerdas dan kontekstual.",
+  },
+  {
+    icon: "paintbrush",
+    title: "Customizable",
+    description:
+      "Kustomisasi sesuai kebutuhan bisnis Anda.",
+  },
+  {
+    icon: "tabletSmartphone",
+    title: "Direct Payment",
     description:
       "Bayar biaya API Meta langsung di dashboard, tanpa biaya tersembunyi.",
   },
@@ -82,51 +98,50 @@ const iconMap: Record<
 <template>
   <section
     id="features"
-    class="container py-24 sm:py-32"
+    class="container py-16 sm:py-24"
   >
-    <h2 class="text-lg text-primary text-center mb-2 tracking-wider">
-      Features
-    </h2>
+    <div class="text-center mb-12">
+      <h2 class="text-lg text-primary mb-2 tracking-wider">
+        Features
+      </h2>
 
-    <h2 class="text-3xl md:text-4xl text-center font-bold mb-4">
-      Platform CRM yang 
-      <span
-        class="text-transparent bg-gradient-to-r from-[#D247BF] to-primary bg-clip-text"
-        >Berbeda
-      </span> 
-      dari Yang Lain
-    </h2>
+      <h2 class="text-2xl md:text-4xl font-bold mb-4">
+        Platform CRM yang 
+        <span
+          class="text-transparent bg-gradient-to-r from-[#D247BF] to-primary bg-clip-text"
+          >Berbeda
+        </span> 
+        dari Yang Lain
+      </h2>
 
-    <h3 class="md:w-1/2 mx-auto text-xl text-center text-muted-foreground mb-8">
-      Kami platform Whatsapp CRM open source pertama yang mengintegrasikan AI Agent WhatsApp resmi Meta. 
-      Kelola percakapan, otomatisasi respons, dan tingkatkan penjualan - Gratis! Tanpa Biaya Tersembunyi.
-    </h3>
+      <p class="text-lg text-muted-foreground max-w-3xl mx-auto">
+        Kami platform Whatsapp CRM open source pertama yang mengintegrasikan AI Agent WhatsApp resmi Meta. 
+        Kelola percakapan, otomatisasi respons, dan tingkatkan penjualan - Gratis! Tanpa Biaya Tersembunyi.
+      </p>
+    </div>
 
-    <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
+    <!-- Mobile-optimized grid -->
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
       <div
         v-for="{ icon, title, description } in featureList"
         :key="title"
+        class="group p-6 rounded-xl hover:bg-muted/50 transition-all duration-200 border border-transparent hover:border-primary/20"
       >
-        <Card class="h-full bg-background border-0 shadow-none">
-          <CardHeader class="flex justify-center items-center">
-            <div
-              class="bg-primary/20 p-2 rounded-full ring-8 ring-primary/10 mb-4"
-            >
-              <component
-                :is="iconMap[icon]"
-                class="size-6 text-primary"
-              />
-            </div>
+        <!-- Icon -->
+        <div class="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center mb-4 group-hover:bg-primary/20 transition-colors">
+          <component
+            :is="iconMap[icon]"
+            class="w-6 h-6 text-primary"
+          />
+        </div>
 
-            <CardTitle>
-              {{ title }}
-            </CardTitle>
-          </CardHeader>
-
-          <CardContent class="text-muted-foreground text-center">
-            {{ description }}
-          </CardContent>
-        </Card>
+        <!-- Content -->
+        <h3 class="font-semibold text-lg mb-3 group-hover:text-primary transition-colors">
+          {{ title }}
+        </h3>
+        <p class="text-muted-foreground text-sm leading-relaxed">
+          {{ description }}
+        </p>
       </div>
     </div>
   </section>

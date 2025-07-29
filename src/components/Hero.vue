@@ -39,7 +39,7 @@ import { ArrowRight } from "lucide-vue-next";
 
         <div class="space-y-4 md:space-y-0 md:space-x-4">
           <Button class="w-5/6 md:w-1/4 font-bold group/arrow">
-            Get Started
+            Mulai Sekarang!
             <ArrowRight
               class="size-5 ml-2 group-hover/arrow:translate-x-1 transition-transform"
             />
@@ -51,9 +51,7 @@ import { ArrowRight } from "lucide-vue-next";
             class="w-5/6 md:w-1/4 font-bold"
           >
             <a
-              href="https://github.com/leoMirandaa/shadcn-vue-landing-page.git"
-              target="_blank"
-              >Github respository</a
+              >Lihat Dokumentasi</a
             >
           </Button>
         </div>

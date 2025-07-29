@@ -1,5 +1,4 @@
 <script setup lang="ts">
-import { ChevronsDown } from "lucide-vue-next";
 import Separator from "./ui/separator/Separator.vue";
 </script>
 
@@ -17,11 +16,12 @@ import Separator from "./ui/separator/Separator.vue";
             href="#"
             class="flex font-bold items-center"
           >
-            <ChevronsDown
-              class="bg-gradient-to-tr from-primary via-primary/70 to-primary rounded-lg w-9 h-9 mr-2 border text-white"
+            <img
+              src="../assets/logo.png"
+              alt="Logo"
+              class="w-9 h-9 mr-2"
             />
-
-            <h3 class="text-2xl">Shadcn-Vue</h3>
+            <h3 class="text-2xl">Layanify</h3>
           </a>
         </div>
 
@@ -149,13 +149,11 @@ import Separator from "./ui/separator/Separator.vue";
       <Separator class="my-6" />
       <section className="">
         <h3 class="">
-          &copy; 2024 Designed and developed by
+          &copy; Copyright 2025 Layanify. 
           <a
-            target="_blank"
-            href="https://github.com/leoMirandaa"
             className="text-primary transition-all border-primary hover:border-b-2"
           >
-            Leo Miranda
+          All rights reserved.
           </a>
         </h3>
       </section>

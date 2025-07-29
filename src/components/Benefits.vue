@@ -1,6 +1,4 @@
 <script setup lang="ts">
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-
 import {
   Sparkle,
   Tag,
@@ -64,51 +62,53 @@ const iconMap: Record<
 <template>
   <section
     id="benefits"
-    class="container py-24 sm:py-32"
+    class="container py-16 sm:py-24"
   >
-    <div class="grid lg:grid-cols-2 place-items-center lg:gap-24">
-      <div>
+    <div class="grid lg:grid-cols-2 place-items-center lg:gap-16">
+      <div class="text-center lg:text-left">
         <h2 class="text-lg text-primary mb-2 tracking-wider">Benefits</h2>
 
-        <h2 class="text-3xl md:text-4xl font-bold mb-4">
+        <h2 class="text-2xl md:text-4xl font-bold mb-4">
           Solusi Sesuai 
           <span
             class="text-transparent bg-gradient-to-r from-[#D247BF] to-primary bg-clip-text"
             >Kebutuhan & Budget
           </span> Anda
         </h2>
-        <!-- <p class="text-xl text-muted-foreground mb-8">
-          Platform CRM Open Source pertama yang mengintegrasikan AI Agent WhatsApp resmi Meta. 
-          Kelola percakapan, otomatisasi respons, dan tingkatkan penjualan - Gratis! Tanpa Biaya Tersembunyi.
-        </p> -->
       </div>
 
-      <div class="grid lg:grid-cols-2 gap-4 w-full">
-        <Card
+      <!-- Mobile-optimized layout -->
+      <div class="w-full space-y-6 lg:space-y-4">
+        <div
           v-for="({ icon, title, description }, index) in benefitList"
           :key="title"
-          class="bg-muted/50 dark:bg-card hover:bg-background dark:hover:bg-background transition-all delay-75 group/number"
+          class="group flex items-start gap-4 p-4 rounded-lg hover:bg-muted/50 transition-all duration-200"
         >
-          <CardHeader>
-            <div class="flex justify-between">
+          <!-- Icon with number background -->
+          <div class="relative flex-shrink-0">
+            <div class="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center">
               <component
-                class="size-8 mb-6 text-primary"
+                class="w-6 h-6 text-primary"
                 :is="iconMap[icon]"
               />
-
-              <span
-                class="text-5xl text-muted-foreground/15 font-medium transition-all delay-75 group-hover/number:text-muted-foreground/30"
-                >0{{ index + 1 }}</span
-              >
             </div>
+            <span
+              class="absolute -top-2 -right-2 w-6 h-6 bg-primary text-white text-xs rounded-full flex items-center justify-center font-bold"
+            >
+              {{ index + 1 }}
+            </span>
+          </div>
 
-            <CardTitle>{{ title }}</CardTitle>
-          </CardHeader>
-
-          <CardContent class="text-muted-foreground">
-            {{ description }}
-          </CardContent>
-        </Card>
+          <!-- Content -->
+          <div class="flex-1 min-w-0">
+            <h3 class="font-semibold text-lg mb-2 group-hover:text-primary transition-colors">
+              {{ title }}
+            </h3>
+            <p class="text-muted-foreground text-sm leading-relaxed">
+              {{ description }}
+            </p>
+          </div>
+        </div>
       </div>
     </div>
   </section>
