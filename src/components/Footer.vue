@@ -107,6 +107,24 @@ import Separator from "./ui/separator/Separator.vue";
 
           <div>
             <a
+              href="/terms"
+              class="opacity-60 hover:opacity-100"
+            >
+              Terms
+            </a>
+          </div>
+
+          <div>
+            <a
+              href="/privacy-policy"
+              class="opacity-60 hover:opacity-100"
+            >
+              Privacy Policy
+            </a>
+          </div>
+
+          <div>
+            <a
               href="#"
               class="opacity-60 hover:opacity-100"
             >
@@ -149,7 +167,7 @@ import Separator from "./ui/separator/Separator.vue";
       <Separator class="my-6" />
       <section className="">
         <h3 class="">
-          &copy; Copyright 2025 Layanify. 
+          &copy; Copyright 2025 PT Layanify Teknologi Indonesia. 
           <a
             className="text-primary transition-all border-primary hover:border-b-2"
           >

@@ -55,7 +55,7 @@ const routeList: RouteProps[] = [
   {
     href: "#faq",
     label: "FAQ",
-  },
+  }
 ];
 
 const featureList: FeatureProps[] = [
@@ -137,9 +137,17 @@ const isOpen = ref<boolean>(false);
                 <a
                   @click="isOpen = false"
                   :href="href"
+                  v-if="href.startsWith('#')"
                 >
                   {{ label }}
                 </a>
+                <router-link
+                  :to="href"
+                  @click="isOpen = false"
+                  v-else
+                >
+                  {{ label }}
+                </router-link>
               </Button>
             </div>
           </div>
@@ -185,18 +193,19 @@ const isOpen = ref<boolean>(false);
           </NavigationMenuContent>
         </NavigationMenuItem>
 
-        <NavigationMenuItem>
+        <NavigationMenuItem v-for="{ href, label } in routeList" :key="label">
           <NavigationMenuLink asChild>
             <Button
-              v-for="{ href, label } in routeList"
-              :key="label"
               as-child
               variant="ghost"
               class="justify-start text-base"
             >
-              <a :href="href">
+              <a :href="href" v-if="href.startsWith('#')">
                 {{ label }}
               </a>
+              <router-link :to="href" v-else>
+                {{ label }}
+              </router-link>
             </Button>
           </NavigationMenuLink>
         </NavigationMenuItem>
