@@ -1,0 +1,389 @@
+{
+  "common": {
+    "loading": "Memuat...",
+    "error": "Terjadi Kesalahan",
+    "success": "Berhasil",
+    "close": "Tutup",
+    "cancel": "Batal",
+    "confirm": "Konfirmasi",
+    "save": "Simpan",
+    "edit": "Edit",
+    "delete": "Hapus",
+    "back": "Kembali",
+    "next": "Selanjutnya",
+    "previous": "Sebelumnya",
+    "search": "Cari",
+    "filter": "Filter",
+    "sort": "Urutkan",
+    "view": "Lihat",
+    "download": "Unduh",
+    "upload": "Unggah",
+    "share": "Bagikan",
+    "copy": "Salin",
+    "learn_more": "Pelajari Lebih Lanjut",
+    "get_started": "Mulai Sekarang",
+    "contact_us": "Hubungi Kami",
+    "sign_up": "Daftar",
+    "login": "Masuk",
+    "logout": "Keluar",
+    "profile": "Profil",
+    "settings": "Pengaturan",
+    "help": "Bantuan",
+    "about": "Tentang",
+    "privacy": "Privasi",
+    "terms": "Syarat",
+    "pricing": "Harga",
+    "features": "Fitur",
+    "home": "Beranda",
+    "language": "Bahasa"
+  },
+  "navigation": {
+    "logo": "Layanify",
+    "pricing": "Harga",
+    "how_it_works": "Cara Kerja",
+    "testimonials": "Testimoni",
+    "faq": "FAQ",
+    "features": "Fitur",
+    "sign_up_free": "Daftar Gratis",
+    "customer_service": "Layanan Pelanggan 24/7",
+    "customer_service_desc": "Jangan pernah lagi melewatkan pertanyaan pelanggan dengan AI yang bekerja nonstop.",
+    "smart_booking": "Mesin Pemesanan Cerdas",
+    "smart_booking_desc": "Tangani pemesanan kompleks, deposit, dan konfirmasi secara otomatis.",
+    "pay_as_you_go": "Harga Bayar Sesuai Penggunaan",
+    "pay_as_you_go_desc": "Harga yang adil tanpa kejutan. Hanya bayar untuk yang Anda gunakan."
+  },
+  "hero": {
+    "trusted_by": "Dipercaya oleh 50+ Bisnis",
+    "titles": {
+      "title1": "Berhenti Kehilangan Pelanggan karena Balasan Lambat.",
+      "gradient1": "Bisnis Anda Layak Mendapatkan Waktu Respons Lebih Baik.",
+      "title2": "Karyawan 24/7 yang Biayanya Lebih Murah dari Kopi Harian Anda.",
+      "gradient2": "AI Terjangkau yang Tidur Pernah Tidur.",
+      "title3": "Fokus pada Tamu Anda, Bukan Ponsel Anda.",
+      "gradient3": "Biarkan AI Menangani sisanya.",
+      "title4": "AI Anda Tidak Pernah Tidur, Jadi Pemesanan Anda Tidak Berhenti.",
+      "gradient4": "Tangkap Setiap Peluang, 24/7."
+    },
+    "description": "Otomatisasi layanan pelanggan WhatsApp & Instagram, tangani pemesanan, dan jawab FAQ 24/7. Semua dengan paket bayar sesuai penggunaan. Mulai gratis.",
+    "start_free": "Mulai Gratis untuk 50 Pesan",
+    "see_pricing": "Lihat Harga"
+  },
+  "problem": {
+    "title": "Apakah Ini Terdengar ",
+    "title_highlight": "Familiar?",
+    "subtitle": "Biaya tersembunyi menjalankan bisnis perhotelan Anda di surga",
+    "points": [
+      "Menjawab \"apakah tersedia?\" jam 2 pagi",
+      "Kehilangan tidur saat pelanggan mengharapkan respons instan",
+      "Kehilangan pelanggan ke pesaing yang lebih cepat",
+      "Setiap menit Anda tidak membalas, mereka memesan di tempat lain",
+      "Juggling beberapa platform",
+      "Berpindah antara WhatsApp, Instagram, dan spreadsheet sepanjang hari",
+      "Tidak ada waktu untuk mengembangkan bisnis Anda",
+      "Terjebak menjawab pesan alih-alih fokus pada hal yang penting"
+    ],
+    "cta_question": "Bagaimana jika Anda bisa mengembalikan 10+ jam per minggu sambil meningkatkan pemesanan?"
+  },
+  "how_it_works": {
+    "title": "Resepsionis AI Anda, Siap dalam ",
+    "title_highlight": "3 Langkah Sederhana",
+    "subtitle": "Tidak perlu keahlian teknis. Siapkan dalam hitungan menit, bukan hari.",
+    "setup_time": "Sebagian besar bisnis aktif dalam waktu kurang dari 5 menit",
+    "setup_benefits": "Tidak perlu kartu kredit • Tidak perlu keahlian teknis • Batalkan kapan saja",
+    "steps": [
+      {
+        "title": "Hubungkan WhatsApp Anda",
+        "description": "Hubungkan nomor bisnis Anda dengan aman dalam 2 menit."
+      },
+      {
+        "title": "Latih AI Anda",
+        "description": "Unggah menu, daftar harga, atau FAQ Anda. AI kami langsung mempelajari bisnis Anda."
+      },
+      {
+        "title": "Go Live & Santai",
+        "description": "AI Anda sekarang menangani pertanyaan dan pemesanan pelanggan 24/7."
+      }
+    ]
+  },
+  "features": {
+    "title": "Lebih dari Sekadar Chatbot.",
+    "title_highlight": "Ini Mitra Bisnis Anda.",
+    "subtitle": "Berhenti kehilangan pelanggan karena respons lambat dan mulai mengembangkan bisnis Anda dengan AI yang bekerja sekeras Anda.",
+    "booking": {
+      "title": "Mesin Pemesanan Cerdas",
+      "description": "Secara otomatis menangani pemesanan kompleks, deposit, dan konfirmasi, jadi Anda tidak perlu melakukannya.",
+      "benefit": "Hemat 10+ jam per minggu untuk manajemen pemesanan manual"
+    },
+    "memory": {
+      "title": "Memori Seperti Gajah",
+      "description": "AI kami mengingat percakapan sebelumnya dan seluruh basis pengetahuan bisnis Anda, memberikan jawaban yang konsisten dan akurat.",
+      "benefit": "Jangan pernah mengulang diri Anda lagi - konsistensi sempurna setiap saat"
+    },
+    "stats": {
+      "availability": "24/7",
+      "service": "Layanan Pelanggan",
+      "response_time": "Waktu Respons",
+      "response_value": "< 5 detik",
+      "accuracy": "Akurasi",
+      "accuracy_value": "95%+",
+      "languages": "Bahasa",
+      "languages_value": "ID + EN"
+    },
+    "live_chat_notice": "Coba widget live chat kami di pojok → Rasakan AI-nya sendiri"
+  },
+  "testimonials": {
+    "title": "Apa Kata Pelanggan Kami",
+    "subtitle": "Bergabunglah dengan ribuan bisnis yang sudah menggunakan Layanify",
+    "content": "Kami meningkatkan pemesanan langsung sebesar 30% di bulan pertama. Seperti memiliki staf tambahan yang tidak pernah tidur.",
+    "author": "Made",
+    "business": "Villa Bahagia, Canggu",
+    "result": "+30% Pemesanan Langsung",
+    "testimonial1": {
+      "name": "Sarah Johnson",
+      "role": "Pemilik Restoran",
+      "content": "Layanify mengubah cara kami menangani pertanyaan pelanggan. Kami melihat peningkatan 40% dalam pemesanan sejak mengimplementasikan asisten AI."
+    },
+    "testimonial2": {
+      "name": "Michael Chen",
+      "role": "Manajer Salon",
+      "content": "Investasi terbaik yang kami buat tahun ini. Waktu respons kami turun dari jam menjadi detik, dan pelanggan menyukainya."
+    },
+    "testimonial3": {
+      "name": "Amanda Rodriguez",
+      "role": "Manajer Hotel",
+      "content": "Kami menangani 3x lebih banyak pertanyaan pelanggan tanpa mempekerjakan staf tambahan. ROI-nya luar biasa."
+    }
+  },
+  "pricing": {
+    "title": "Harga Fleksibel yang",
+    "title_highlight": "Cocok untuk Kebutuhan Anda",
+    "subtitle": "Bayar saat Anda memiliki pelanggan, bukan saat sepi. Pilih paket bulanan terjangkau atau bayar sesuai penggunaan tanpa komitmen.",
+    "monthly_subscription": "Berlangganan Bulanan",
+    "pay_as_you_go": "Bayar sesuai penggunaan",
+    "calculator": {
+      "title": "Penghematan",
+      "title_highlight": "Kalkulator",
+      "subtitle": "Lihat berapa banyak yang bisa Anda hemat dengan paket Flex kami",
+      "question": "Berapa banyak pesan yang Anda terima per hari rata-rata?",
+      "messages_per_day": "pesan/hari"
+    },
+    "comparison": {
+      "title": "Fitur Lengkap",
+      "title_highlight": "Perbandingan",
+      "subtitle": "Bandingkan semua paket dan pilih yang paling sesuai dengan kebutuhan bisnis Anda"
+    },
+    "plans": {
+      "starter": {
+        "title": "Starter",
+        "price": "Gratis",
+        "period": "/bulan",
+        "description": "Sempurna untuk bisnis kecil yang memulai otomasi AI",
+        "button": "Mulai Gratis",
+        "benefits": [
+          "50 Reply Credit per bulan",
+          "Pelatihan AI dasar",
+          "Integrasi WhatsApp",
+          "Dukungan email"
+        ]
+      },
+      "business": {
+        "title": "Business",
+        "price": "Rp 199K",
+        "period": "/bulan",
+        "description": "Ideal untuk bisnis yang berkembang dengan pertanyaan pelanggan sedang",
+        "button": "Mulai Gratis Trial",
+        "benefits": [
+          "800 Reply Credit per bulan",
+          "Pelatihan AI lanjutan",
+          "Tanpa watermark",
+          "Dukungan prioritas",
+          "Analitik dasar"
+        ],
+        "highlight": "Paling Populer"
+      },
+      "pro": {
+        "title": "Pro",
+        "price": "Rp 699K",
+        "period": "/bulan",
+        "description": "Untuk bisnis yang sudah mapan dengan volume pelanggan tinggi",
+        "button": "Mulai Gratis Trial",
+        "benefits": [
+          "2.000 Reply Credit per bulan",
+          "Fitur AI premium",
+          "Persona AI kustom",
+          "Akses API",
+          "Analitik lanjutan"
+        ]
+      },
+      "flex": {
+        "title": "Flex",
+        "price": "Rp 0",
+        "period": "top-up",
+        "description": "Credit bayar sesuai penggunaan yang tidak pernah kedaluwarsa",
+        "button": "Mulai Sekarang",
+        "benefits": [
+          "Tidak ada komitmen bulanan",
+          "Credit tidak pernah kedaluwarsa",
+          "Top-up kapan saja",
+          "Akses fitur penuh"
+        ],
+        "highlight": "Nilai Terbaik"
+      }
+    },
+    "table": {
+      "features": {
+        "reply_credits": "Reply Credits",
+        "cost_per_credit": "Biaya per Credit (overage)",
+        "no_watermark": "Tanpa Watermark",
+        "ai_persona_pdf": "Persona AI (PDF)",
+        "ai_persona_website": "Persona AI (Website)",
+        "analytics": "Analitik",
+        "api_integration": "Integrasi API",
+        "support": "Dukungan"
+      },
+      "starter": {
+        "reply_credits": "50",
+        "cost_per_credit": "N/A",
+        "no_watermark": "❌",
+        "ai_persona_pdf": "❌",
+        "ai_persona_website": "❌",
+        "analytics": "❌",
+        "api_integration": "❌",
+        "support": "Email"
+      },
+      "flex": {
+        "reply_credits": "Top-up",
+        "cost_per_credit": "Rp 500",
+        "no_watermark": "✅",
+        "ai_persona_pdf": "✅",
+        "ai_persona_website": "✅",
+        "analytics": "✅",
+        "api_integration": "✅",
+        "support": "Prioritas"
+      },
+      "business": {
+        "reply_credits": "800",
+        "cost_per_credit": "Rp 350",
+        "no_watermark": "✅",
+        "ai_persona_pdf": "✅",
+        "ai_persona_website": "✅",
+        "analytics": "Dasar",
+        "api_integration": "❌",
+        "support": "Prioritas"
+      },
+      "pro": {
+        "reply_credits": "2.000",
+        "cost_per_credit": "Rp 250",
+        "no_watermark": "✅",
+        "ai_persona_pdf": "✅",
+        "ai_persona_website": "✅",
+        "analytics": "Lanjutan",
+        "api_integration": "✅",
+        "support": "Dedikasi"
+      }
+    },
+    "calculator_labels": {
+      "manual_admin": "Biaya Admin Manual",
+      "competitors": "Kompetitor (SaaS Lain)",
+      "our_flex": "Paket 'Flex' Kami",
+      "admin_salary": "(1 Gaji Admin)",
+      "fixed_cost": "(Biaya Tetap)",
+      "you_save": "(Anda Hemat"
+    },
+    "cta": {
+      "title": "Siap Memulai?",
+      "title_highlight": "Hemat Waktu Hari Ini",
+      "subtitle": "Bergabunglah dengan 50+ bisnis yang telah meningkatkan efisiensi layanan pelanggan hingga 80%.",
+      "button": "Mulai Gratis Sekarang",
+      "benefits": "✓ Tidak perlu kartu kredit ✓ Siap dalam 5 menit ✓ Batalkan kapan saja"
+    }
+  },
+  "faq": {
+    "title": "Punya Pertanyaan?",
+    "title_highlight": "Kami Punya Jawabannya",
+    "subtitle": "Semua yang perlu Anda ketahui sebelum memulai",
+    "q1": {
+      "question": "Apakah sulit untuk mengatur?",
+      "answer": "Sama sekali tidak! Sebagian besar pengguna aktif dalam waktu kurang dari 5 menit. Kami juga memiliki panduan video untuk membantu Anda."
+    },
+    "q2": {
+      "question": "Bagaimana jika saya butuh bantuan?",
+      "answer": "Kami menawarkan dukungan yang ramah melalui chat dan email untuk semua paket berbayar. Tim kami berbasis di Bali dan memahami kebutuhan bisnis lokal."
+    },
+    "q3": {
+      "question": "Apakah akan bekerja dengan nomor WhatsApp yang ada?",
+      "answer": "Ya! Anda bisa menggunakan nomor WhatsApp Bisnis Anda saat ini. Kami akan memandu Anda melalui proses verifikasi yang sederhana dengan Meta."
+    },
+    "q4": {
+      "question": "Bisakah AI menangani bahasa asing?",
+      "answer": "Tentu saja! AI kami dilatih khusus untuk konteks bisnis setiap bahasa, memahami slang, dan dapat berkomunikasi dalam bahasa yang digunakan pelanggan."
+    },
+    "q5": {
+      "question": "Apa yang terjadi jika saya mendapatkan pesan yang tidak bisa dijawab AI?",
+      "answer": "AI akan secara otomatis memberi tahu Anda dan bahkan dapat meneruskan pertanyaan kompleks ke WhatsApp pribadi Anda. Anda selalu memiliki kontrol."
+    },
+    "q6": {
+      "question": "Apa itu 'Reply Credits'?",
+      "answer": "Satu (1) Reply Credit digunakan setiap kali AI kami membalas pesan dari pelanggan Anda. Pesan masuk dari pelanggan tidak dihitung. Sederhana dan adil."
+    },
+    "q7": {
+      "question": "Apa yang terjadi jika saya kehabisan kredit bulanan?",
+      "answer": "Tidak perlu khawatir! Jika kredit paket 'Business' atau 'Pro' Anda habis, kami akan secara otomatis menggunakan tarif overage (misalnya, Rp 350/kredit untuk 'Business') untuk menjaga layanan Anda berjalan. Anda juga bisa top-up kredit tambahan kapan saja."
+    },
+    "q8": {
+      "question": "Apa perbedaan antara paket 'Flex' dan 'Starter'?",
+      "answer": "Paket 'Starter' memberi Anda 50 kredit gratis/bulan tetapi berhenti saat habis. Paket 'Flex' tidak memiliki kredit gratis, tetapi Anda bisa top-up jumlah berapa pun (mulai dari Rp 50.000) dengan harga Rp 500 per kredit dan kredit tidak akan kedaluwarsa selama Anda aktif."
+    },
+    "q9": {
+      "question": "Bisakah saya mengubah paket di tengah jalan?",
+      "answer": "Tentu saja. Anda bisa upgrade atau downgrade paket Anda kapan saja. Sistem kami akan secara otomatis menghitung penyesuaian prorata."
+    },
+    "support": {
+      "title": "Masih Punya Pertanyaan?",
+      "description": "Tim dukungan kami yang ramah ada di sini untuk membantu Anda memulai",
+      "button": "Chat dengan Dukungan"
+    }
+  },
+  "cta": {
+    "title": "Siap ",
+    "title_highlight": "Mendapatkan Waktu Anda Kembali?",
+    "subtitle": "Bergabunglah dengan puluhan bisnis yang menghemat jam setiap minggu. Mulai gratis Anda hari ini—tidak perlu kartu kredit.",
+    "button": "Mulai Gratis Sekarang",
+    "benefits": "• Tidak perlu kartu kredit • 50 pesan gratis untuk memulai • Batalkan kapan saja • Siapkan dalam waktu kurang dari 5 menit",
+    "stats": {
+      "businesses": "50+",
+      "businesses_label": "Bisnis",
+      "hours": "10+ jam",
+      "hours_label": "Dihemat Mingguan",
+      "bookings": "30%",
+      "bookings_label": "Lebih Banyak Pemesanan"
+    },
+    "urgency": "Slot terbatas tersedia untuk paket gratis kami bulan ini"
+  },
+  "footer": {
+    "logo": "Layanify",
+    "contact": "Kontak",
+    "github": "Github",
+    "twitter": "Twitter",
+    "instagram": "Instagram",
+    "platforms": "Platform",
+    "ios": "iOS",
+    "android": "Android",
+    "web": "Web",
+    "help": "Bantuan",
+    "contact_us": "Hubungi Kami",
+    "faq": "FAQ",
+    "terms": "Syarat",
+    "privacy_policy": "Kebijakan Privasi",
+    "feedback": "Masukan",
+    "socials": "Sosial",
+    "twitch": "Twitch",
+    "discord": "Discord",
+    "dribbble": "Dribbble",
+    "copyright": "© 2025 PT Layanify Teknologi Indonesia. Semua hak dilindungi."
+  },
+  "language_switcher": {
+    "english": "English",
+    "indonesian": "Bahasa Indonesia"
+  }
+}

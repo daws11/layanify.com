@@ -1,30 +1,25 @@
 <script setup lang="ts">
 import Navbar from "@/components/Navbar.vue";
 import Hero from "@/components/Hero.vue";
-import Benefits from "@/components/Benefits.vue";
-import Features from "@/components/Features.vue";
-import Services from "@/components/Services.vue";
-import HowItWorks from "@/components/HowItWorks.vue";
-import Sponsors from "@/components/Sponsors.vue";
+import ProblemSection from "@/components/ProblemSection.vue";
+import SimpleHowItWorks from "@/components/SimpleHowItWorks.vue";
+import FeaturesWithTestimonial from "@/components/FeaturesWithTestimonial.vue";
 import Pricing from "@/components/Pricing.vue";
-import Community from "@/components/Community.vue";
-import FAQ from "@/components/FAQ.vue";
+import SimplifiedFAQ from "@/components/SimplifiedFAQ.vue";
+import FinalCTA from "@/components/FinalCTA.vue";
 import Footer from "@/components/Footer.vue";
+import LiveChatWidget from "@/components/LiveChatWidget.vue";
 </script>
 
 <template>
   <Navbar />
-  <Hero />
-  <Sponsors />
-  <Benefits />
-  <Features />
-  <Services />
-  <HowItWorks />
-  <!-- <Testimonials />
-  <Team /> -->
+  <Hero id="hero" />
+  <ProblemSection />
+  <SimpleHowItWorks id="simple-how-it-works" />
+  <FeaturesWithTestimonial id="features-testimonial" />
   <Pricing />
-  <Community />
-  <FAQ />
-  <!-- <Contact /> -->
+  <SimplifiedFAQ />
+  <FinalCTA />
   <Footer />
-</template> 
+  <LiveChatWidget />
+</template>

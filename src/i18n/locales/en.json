@@ -1,0 +1,389 @@
+{
+  "common": {
+    "loading": "Loading...",
+    "error": "Error",
+    "success": "Success",
+    "close": "Close",
+    "cancel": "Cancel",
+    "confirm": "Confirm",
+    "save": "Save",
+    "edit": "Edit",
+    "delete": "Delete",
+    "back": "Back",
+    "next": "Next",
+    "previous": "Previous",
+    "search": "Search",
+    "filter": "Filter",
+    "sort": "Sort",
+    "view": "View",
+    "download": "Download",
+    "upload": "Upload",
+    "share": "Share",
+    "copy": "Copy",
+    "learn_more": "Learn More",
+    "get_started": "Get Started",
+    "contact_us": "Contact Us",
+    "sign_up": "Sign Up",
+    "login": "Login",
+    "logout": "Logout",
+    "profile": "Profile",
+    "settings": "Settings",
+    "help": "Help",
+    "about": "About",
+    "privacy": "Privacy",
+    "terms": "Terms",
+    "pricing": "Pricing",
+    "features": "Features",
+    "home": "Home",
+    "language": "Language"
+  },
+  "navigation": {
+    "logo": "Layanify",
+    "pricing": "Pricing",
+    "how_it_works": "How It Works",
+    "testimonials": "Testimonials",
+    "faq": "FAQ",
+    "features": "Features",
+    "sign_up_free": "Sign Up Free",
+    "customer_service": "24/7 Customer Service",
+    "customer_service_desc": "Never miss a customer inquiry again with AI that works around the clock.",
+    "smart_booking": "Smart Booking Engine",
+    "smart_booking_desc": "Automatically handle complex bookings, deposits, and confirmations.",
+    "pay_as_you_go": "Pay-As-You-Go Pricing",
+    "pay_as_you_go_desc": "Fair pricing with no surprises. Only pay for what you use."
+  },
+  "hero": {
+    "trusted_by": "Trusted by 50+ Businesses",
+    "titles": {
+      "title1": "Stop Losing Customers to Slow Replies.",
+      "gradient1": "Your Business Deserves Better Response Time.",
+      "title2": "The 24/7 Employee That Costs Less Than Your Daily Coffee.",
+      "gradient2": "Affordable AI That Never Sleeps.",
+      "title3": "Focus on Your Guests, Not Your Phone.",
+      "gradient3": "Let AI Handle the Rest.",
+      "title4": "Your AI Never Sleeps, So Your Bookings Don't Stop.",
+      "gradient4": "Capture Every Opportunity, 24/7."
+    },
+    "description": "Automate WhatsApp & Instagram customer service, handle bookings, and answer FAQs 24/7. All with a pay-as-you-go plan. Start free.",
+    "start_free": "Start Free for 50 Messages",
+    "see_pricing": "See Pricing"
+  },
+  "problem": {
+    "title": "Does This Sound ",
+    "title_highlight": "Familiar?",
+    "subtitle": "The hidden costs of running your hospitality business in paradise",
+    "points": [
+      "Answering \"is it available?\" at 2 AM",
+      "Losing sleep while customers expect instant responses",
+      "Losing customers to faster competitors",
+      "Every minute you don't reply, they're booking somewhere else",
+      "Juggling multiple platforms",
+      "Switching between WhatsApp, Instagram, and spreadsheets all day",
+      "No time to grow your business",
+      "Stuck answering messages instead of focusing on what matters"
+    ],
+    "cta_question": "What if you could reclaim 10+ hours per week while increasing bookings?"
+  },
+  "how_it_works": {
+    "title": "Your AI Receptionist, Ready in ",
+    "title_highlight": "3 Simple Steps",
+    "subtitle": "No technical skills required. Set up in minutes, not days.",
+    "setup_time": "Most businesses are live in under 5 minutes",
+    "setup_benefits": "No credit card required • No technical skills needed • Cancel anytime",
+    "steps": [
+      {
+        "title": "Connect Your WhatsApp",
+        "description": "Securely connect your business number in 2 minutes."
+      },
+      {
+        "title": "Train Your AI",
+        "description": "Upload your menu, price list, or FAQ. Our AI learns your business instantly."
+      },
+      {
+        "title": "Go Live & Relax",
+        "description": "Your AI is now handling customer questions and bookings 24/7."
+      }
+    ]
+  },
+  "features": {
+    "title": "More Than Just a Chatbot.",
+    "title_highlight": "It's Your Business Partner.",
+    "subtitle": "Stop losing customers to slow responses and start growing your business with AI that works as hard as you do.",
+    "booking": {
+      "title": "Smart Booking Engine",
+      "description": "Automatically handles complex bookings, deposits, and confirmations, so you don't have to.",
+      "benefit": "Save 10+ hours per week on manual booking management"
+    },
+    "memory": {
+      "title": "A Memory Like an Elephant",
+      "description": "Our AI remembers past conversations and your entire business knowledge base, providing consistent and accurate answers.",
+      "benefit": "Never repeat yourself again - perfect consistency every time"
+    },
+    "stats": {
+      "availability": "24/7",
+      "service": "Customer Service",
+      "response_time": "Response Time",
+      "response_value": "< 5 seconds",
+      "accuracy": "Accuracy",
+      "accuracy_value": "95%+",
+      "languages": "Languages",
+      "languages_value": "ID + EN"
+    },
+    "live_chat_notice": "Try our live chat widget in the corner → Experience the AI yourself"
+  },
+  "testimonials": {
+    "title": "What Our Customers Say",
+    "subtitle": "Join thousands of businesses already using Layanify",
+    "content": "We increased our direct bookings by 30% in the first month. It's like having an extra staff who never sleeps.",
+    "author": "Made",
+    "business": "Villa Bahagia, Canggu",
+    "result": "+30% Direct Bookings",
+    "testimonial1": {
+      "name": "Sarah Johnson",
+      "role": "Restaurant Owner",
+      "content": "Layanify transformed how we handle customer inquiries. We've seen a 40% increase in bookings since implementing the AI assistant."
+    },
+    "testimonial2": {
+      "name": "Michael Chen",
+      "role": "Salon Manager",
+      "content": "The best investment we've made this year. Our response time went from hours to seconds, and customers love it."
+    },
+    "testimonial3": {
+      "name": "Amanda Rodriguez",
+      "role": "Hotel Manager",
+      "content": "We handle 3x more customer inquiries without hiring additional staff. The ROI is incredible."
+    }
+  },
+  "pricing": {
+    "title": "Flexible Pricing That",
+    "title_highlight": "Fits Your Needs",
+    "subtitle": "Pay when you have customers, not when it's quiet. Choose affordable monthly plans or pay-as-you-go with no commitments.",
+    "monthly_subscription": "Monthly Subscription",
+    "pay_as_you_go": "Pay-as-you-go",
+    "calculator": {
+      "title": "Your Savings",
+      "title_highlight": "Calculator",
+      "subtitle": "See how much you can save with our Flex plan",
+      "question": "How many messages do you receive per day on average?",
+      "messages_per_day": "messages/day"
+    },
+    "comparison": {
+      "title": "Complete Feature",
+      "title_highlight": "Comparison",
+      "subtitle": "Compare all plans and choose the one that best suits your business needs"
+    },
+    "plans": {
+      "starter": {
+        "title": "Starter",
+        "price": "Free",
+        "period": "/month",
+        "description": "Perfect for small businesses getting started with AI automation",
+        "button": "Start Free",
+        "benefits": [
+          "50 Reply Credits per month",
+          "Basic AI training",
+          "WhatsApp integration",
+          "Email support"
+        ]
+      },
+      "business": {
+        "title": "Business",
+        "price": "Rp 199K",
+        "period": "/month",
+        "description": "Ideal for growing businesses with moderate customer inquiries",
+        "button": "Start Free Trial",
+        "benefits": [
+          "800 Reply Credits per month",
+          "Advanced AI training",
+          "No watermarks",
+          "Priority support",
+          "Basic analytics"
+        ],
+        "highlight": "Most Popular"
+      },
+      "pro": {
+        "title": "Pro",
+        "price": "Rp 699K",
+        "period": "/month",
+        "description": "For established businesses with high customer volume",
+        "button": "Start Free Trial",
+        "benefits": [
+          "2,000 Reply Credits per month",
+          "Premium AI features",
+          "Custom AI personas",
+          "API access",
+          "Advanced analytics"
+        ]
+      },
+      "flex": {
+        "title": "Flex",
+        "price": "Rp 0",
+        "period": "top-up",
+        "description": "Pay-as-you-go credits that never expire",
+        "button": "Get Started",
+        "benefits": [
+          "No monthly commitments",
+          "Credits never expire",
+          "Top-up anytime",
+          "Full feature access"
+        ],
+        "highlight": "Best Value"
+      }
+    },
+    "table": {
+      "features": {
+        "reply_credits": "Reply Credits",
+        "cost_per_credit": "Cost per Credit (overage)",
+        "no_watermark": "No Watermark",
+        "ai_persona_pdf": "AI Persona (PDF)",
+        "ai_persona_website": "AI Persona (Website)",
+        "analytics": "Analytics",
+        "api_integration": "API Integration",
+        "support": "Support"
+      },
+      "starter": {
+        "reply_credits": "50",
+        "cost_per_credit": "N/A",
+        "no_watermark": "❌",
+        "ai_persona_pdf": "❌",
+        "ai_persona_website": "❌",
+        "analytics": "❌",
+        "api_integration": "❌",
+        "support": "Email"
+      },
+      "flex": {
+        "reply_credits": "Top-up",
+        "cost_per_credit": "Rp 500",
+        "no_watermark": "✅",
+        "ai_persona_pdf": "✅",
+        "ai_persona_website": "✅",
+        "analytics": "✅",
+        "api_integration": "✅",
+        "support": "Priority"
+      },
+      "business": {
+        "reply_credits": "800",
+        "cost_per_credit": "Rp 350",
+        "no_watermark": "✅",
+        "ai_persona_pdf": "✅",
+        "ai_persona_website": "✅",
+        "analytics": "Basic",
+        "api_integration": "❌",
+        "support": "Priority"
+      },
+      "pro": {
+        "reply_credits": "2,000",
+        "cost_per_credit": "Rp 250",
+        "no_watermark": "✅",
+        "ai_persona_pdf": "✅",
+        "ai_persona_website": "✅",
+        "analytics": "Advanced",
+        "api_integration": "✅",
+        "support": "Dedicated"
+      }
+    },
+    "calculator_labels": {
+      "manual_admin": "Manual Admin Cost",
+      "competitors": "Competitors (Other SaaS)",
+      "our_flex": "Our 'Flex' Plan",
+      "admin_salary": "(1 Admin Salary)",
+      "fixed_cost": "(Fixed Cost)",
+      "you_save": "(You Save"
+    },
+    "cta": {
+      "title": "Ready to Get Started?",
+      "title_highlight": "Save Time Today",
+      "subtitle": "Join 50+ businesses that have improved their customer service efficiency by up to 80%.",
+      "button": "Start Free Now",
+      "benefits": "✓ No credit card required ✓ Ready in 5 minutes ✓ Cancel anytime"
+    }
+  },
+  "faq": {
+    "title": "Got Questions?",
+    "title_highlight": "We've Got Answers",
+    "subtitle": "Everything you need to know before getting started",
+    "q1": {
+      "question": "Is it complicated to set up?",
+      "answer": "Not at all! Most users are live in under 5 minutes. We also have video guides to help you."
+    },
+    "q2": {
+      "question": "What if I need help?",
+      "answer": "We offer friendly support via chat and email for all paid plans. Our team is based in Bali and understands local business needs."
+    },
+    "q3": {
+      "question": "Will it work with my existing WhatsApp number?",
+      "answer": "Yes! You can use your current WhatsApp Business number. We'll guide you through the simple verification process with Meta."
+    },
+    "q4": {
+      "question": "Can the AI handle Foreign language?",
+      "answer": "Absolutely! Our AI is trained specifically for every language business context, understands slang, and can communicate in languange that use by customer."
+    },
+    "q5": {
+      "question": "What happens if I get a message the AI can't answer?",
+      "answer": "The AI will automatically notify you and can even forward complex inquiries to your personal WhatsApp. You're always in control."
+    },
+    "q6": {
+      "question": "What are 'Reply Credits'?",
+      "answer": "One (1) Reply Credit is used each time our AI replies to a message from your customer. Incoming messages from customers are not counted. Simple and fair."
+    },
+    "q7": {
+      "question": "What happens if I run out of monthly credits?",
+      "answer": "No worries! If your 'Business' or 'Pro' plan credits run out, we'll automatically use overage rates (e.g., Rp 350/credit for 'Business') to keep your service running. You can also top-up additional credits anytime."
+    },
+    "q8": {
+      "question": "What's the difference between 'Flex' and 'Starter' plans?",
+      "answer": "The 'Starter' plan gives you 50 free credits/month but stops when exhausted. The 'Flex' plan has no free credits, but you can top-up any amount (starting from Rp 50,000) at Rp 500 per credit and credits won't expire as long as you're active."
+    },
+    "q9": {
+      "question": "Can I change plans midway?",
+      "answer": "Absolutely. You can upgrade or downgrade your plan anytime. Our system will automatically calculate prorated adjustments."
+    },
+    "support": {
+      "title": "Still Have Questions?",
+      "description": "Our friendly support team is here to help you get started",
+      "button": "Chat with Support"
+    }
+  },
+  "cta": {
+    "title": "Ready to ",
+    "title_highlight": "Get Your Time Back?",
+    "subtitle": "Join dozens of businesses saving hours every week. Start your free today—no credit card required.",
+    "button": "Start Free Now",
+    "benefits": "• No credit card required • 50 free messages to start • Cancel anytime • Setup in under 5 minutes",
+    "stats": {
+      "businesses": "50+",
+      "businesses_label": "Businesses",
+      "hours": "10+ hrs",
+      "hours_label": "Saved Weekly",
+      "bookings": "30%",
+      "bookings_label": "More Bookings"
+    },
+    "urgency": "Limited spots available for our free plan this month"
+  },
+  "footer": {
+    "logo": "Layanify",
+    "contact": "Contact",
+    "github": "Github",
+    "twitter": "Twitter",
+    "instagram": "Instagram",
+    "platforms": "Platforms",
+    "ios": "iOS",
+    "android": "Android",
+    "web": "Web",
+    "help": "Help",
+    "contact_us": "Contact Us",
+    "faq": "FAQ",
+    "terms": "Terms",
+    "privacy_policy": "Privacy Policy",
+    "feedback": "Feedback",
+    "socials": "Socials",
+    "twitch": "Twitch",
+    "discord": "Discord",
+    "dribbble": "Dribbble",
+    "copyright": "© 2025 PT Layanify Teknologi Indonesia. All rights reserved."
+  },
+  "language_switcher": {
+    "english": "English",
+    "indonesian": "Indonesian"
+  }
+}
