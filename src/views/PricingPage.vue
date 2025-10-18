@@ -5,7 +5,7 @@ import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle }
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Slider } from "@/components/ui/slider";
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table";
-import { Check, Star, Users, Sparkles, TrendingUp, Calculator, TrendingDown } from "lucide-vue-next";
+import { Check, TrendingUp, Calculator, TrendingDown } from "lucide-vue-next";
 import PricingFAQ from "@/components/PricingFAQ.vue";
 import AnimatedNumber from "@/components/AnimatedNumber.vue";
 import LiveChatWidget from "@/components/LiveChatWidget.vue";
@@ -107,16 +107,9 @@ const monthlyMessages = computed(() => dailyMessages.value[0] * 30);
 const adminCost = computed(() => 2500000); // Fixed admin cost
 const competitorCost = computed(() => 500000); // Fixed competitor cost
 
-const ourCost = computed(() => {
-  const baseCost = 199000; // Business plan cost
-  const extraMessages = Math.max(0, monthlyMessages.value - 800);
-  const overageCost = extraMessages * 350; // Rp 350 per extra credit
-  return baseCost + overageCost;
-});
 
-const savings = computed(() => {
-  return Math.round(((adminCost.value - ourCost.value) / adminCost.value) * 100);
-});
+
+
 
 // Feature comparison table
 const featureTable = [

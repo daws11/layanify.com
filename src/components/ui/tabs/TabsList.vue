@@ -5,7 +5,7 @@ interface TabsContextValue {
   modelValue: string
 }
 
-const tabs = inject<TabsContextValue>('tabs')
+inject<TabsContextValue>('tabs')
 </script>
 
 <template>
