@@ -8,6 +8,7 @@ import {
 import { Button } from '@/components/ui/button';
 import { MessageCircle } from "lucide-vue-next";
 import { useLocale } from "@/composables/useLocale";
+import { computed } from "vue";
 
 const { t } = useLocale();
 
@@ -49,6 +50,22 @@ const faqs = [
     answerKey: "faq.q9.answer"
   }
 ];
+
+const faqJsonLd = computed(() => {
+  const mainEntity = faqs.map((f) => ({
+    "@type": "Question",
+    "name": t(f.questionKey),
+    "acceptedAnswer": {
+      "@type": "Answer",
+      "text": t(f.answerKey)
+    }
+  }));
+  return {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": mainEntity
+  };
+});
 </script>
 
 <template>
@@ -68,7 +85,7 @@ const faqs = [
 
       <Accordion type="single" collapsible class="AccordionRoot mb-10">
         <AccordionItem v-for="(faq, index) in faqs" :key="index" :value="`item-${index + 1}`">
-          <AccordionTrigger class="text-left">
+          <AccordionTrigger class="text-left" @click="$nextTick(() => $emit && $emit('faq_open', { index, question: t(faq.questionKey) }))">
             {{ t(faq.questionKey) }}
           </AccordionTrigger>
           <AccordionContent class="text-base">
@@ -86,5 +103,8 @@ const faqs = [
         </Button>
       </div>
     </div>
+    <component :is="'script'" type="application/ld+json">
+      {{ JSON.stringify(faqJsonLd) }}
+    </component>
   </section>
 </template>

@@ -101,7 +101,7 @@ const localizedFeatureList = computed(() =>
     :class="{
       'shadow-light': mode === 'light',
       'shadow-dark': mode === 'dark',
-      'w-[90%] md:w-[70%] lg:w-[75%] lg:max-w-screen-xl top-5 mx-auto sticky border z-40 rounded-2xl flex justify-between items-center p-2 bg-card shadow-md': true,
+      'w-full max-w-screen-xl top-0 mx-auto sticky border z-40 rounded-none sm:rounded-2xl flex justify-between items-center px-3 sm:px-4 py-2 bg-card/80 backdrop-blur supports-backdrop-blur:bg-card/60 shadow-md': true,
     }"
   >
     <router-link
@@ -113,10 +113,10 @@ const localizedFeatureList = computed(() =>
         alt="Logo"
         class=" mt-2 w-9 h-9 mr-2 "
       />
-      {{ t('navigation.logo') }}</router-link
+      <span class="hidden sm:inline">{{ t('navigation.logo') }}</span></router-link
     >
     <!-- Mobile -->
-    <div class="flex items-center lg:hidden">
+    <div class="flex items-center xl:hidden">
       <Sheet v-model:open="isOpen">
         <SheetTrigger as-child>
           <Menu
@@ -181,10 +181,10 @@ const localizedFeatureList = computed(() =>
     </div>
 
     <!-- Desktop -->
-    <NavigationMenu class="hidden lg:block">
+    <NavigationMenu class="hidden xl:block">
       <NavigationMenuList>
         <NavigationMenuItem>
-          <NavigationMenuTrigger class="bg-card text-base">
+          <NavigationMenuTrigger class="bg-card text-sm xl:text-base">
             {{ t('navigation.features') }}
           </NavigationMenuTrigger>
           <NavigationMenuContent>
@@ -217,7 +217,7 @@ const localizedFeatureList = computed(() =>
             <Button
               as-child
               variant="ghost"
-              class="justify-start text-base"
+              class="justify-start text-sm xl:text-base"
             >
               <a :href="href" v-if="href.startsWith('#')">
                 {{ label }}
@@ -231,7 +231,7 @@ const localizedFeatureList = computed(() =>
       </NavigationMenuList>
     </NavigationMenu>
 
-    <div class="hidden lg:flex items-center gap-4">
+    <div class="hidden xl:flex items-center gap-2 sm:gap-3 lg:gap-4">
       <LanguageSwitcher />
       <ToggleTheme />
 

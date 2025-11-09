@@ -8,6 +8,7 @@ import { Slider } from "@/components/ui/slider";
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table";
 import { Check, TrendingUp, Calculator, TrendingDown } from "lucide-vue-next";
 import AnimatedNumber from "@/components/AnimatedNumber.vue";
+import { trackEvent } from "@/lib/utils";
 
 const { t } = useLocale();
 
@@ -16,10 +17,27 @@ enum PopularPlan {
   YES = 1,
 }
 
+type Plan = {
+  title: string;
+  popular: number;
+  price: string;
+  period: string;
+  description: string;
+  buttonText: string;
+  benefitList: string[];
+  buttonVariant?: string;
+  highlight?: string;
+  billedAnnually?: boolean;
+  saveBadge?: string;
+};
 
 
-// Monthly subscription plans
-const monthlyPlans = computed(() => [
+
+// Selected tab for pricing view
+const activeTab = ref('monthly');
+
+// Base monthly subscription plans
+const baseMonthlyPlans = computed<Plan[]>(() => [
   {
     title: t('pricing.plans.starter.title'),
     popular: 0,
@@ -69,8 +87,42 @@ const monthlyPlans = computed(() => [
   },
 ]);
 
+// Compute display price for yearly (20% off, shown as per-month price billed annually)
+function computeDiscountedPrice(price: string): string {
+  if (!price) return price;
+  // Examples: "Free", "Rp 199K", "Rp 699K", "Rp 0"
+  const freeLike = /free/i.test(price) || /gratis/i.test(price);
+  if (freeLike) return price;
+  const match = price.match(/(\d+)\s*K/i);
+  if (match) {
+    const baseK = parseInt(match[1], 10);
+    const discountedK = Math.round(baseK * 0.8);
+    return price.replace(/(\d+)\s*K/i, `${discountedK}K`);
+  }
+  const numeric = price.match(/(\d[\d.]*)/);
+  if (numeric) {
+    const num = parseFloat(numeric[1].replace(/\./g, ''));
+    const discounted = Math.round(num * 0.8);
+    return price.replace(/(\d[\d.]*)/, discounted.toString());
+  }
+  return price;
+}
+
+const monthlyPlans = computed<Plan[]>(() => {
+  return baseMonthlyPlans.value.map((p) => {
+    if (activeTab.value !== 'yearly') return p;
+    return {
+      ...p,
+      price: computeDiscountedPrice(p.price),
+      period: p.period, // keep '/month'
+      billedAnnually: true,
+      saveBadge: 'Save 20%'
+    };
+  });
+});
+
 // Pay-as-you-go plans
-const paygPlans = computed(() => [
+const paygPlans = computed<Plan[]>(() => [
   {
     title: t('pricing.plans.flex.title'),
     popular: 1,
@@ -88,8 +140,10 @@ const paygPlans = computed(() => [
   },
 ]);
 
-// Active tab for pricing toggle
-const activeTab = ref('monthly');
+// Track tab switches
+const onTabChange = (value: string) => {
+  trackEvent('pricing_tab_change', { tab: value });
+};
 
 // ROI Calculator
 const dailyMessages = ref([27]); // Default 27 messages/day (800/month)
@@ -161,6 +215,62 @@ const featureTable = computed(() => [
     pro: t('pricing.table.pro.support')
   }
 ]);
+
+// JSON-LD Product/Service schema built from i18n copy
+const normalizePriceForJsonLd = (price: string): number => {
+  if (!price) return 0;
+  if (/free|gratis/i.test(price)) return 0;
+  const kMatch = price.match(/(\d+)\s*K/i);
+  if (kMatch) return parseInt(kMatch[1], 10) * 1000;
+  const num = price.match(/(\d[\d.]*)/);
+  if (num) return parseInt(num[1].replace(/\./g, ''), 10);
+  return 0;
+};
+
+const productJsonLd = computed(() => {
+  const plans = [
+    {
+      name: t('pricing.plans.starter.title') as string,
+      description: t('pricing.plans.starter.description') as string,
+      price: normalizePriceForJsonLd(t('pricing.plans.starter.price') as string),
+    },
+    {
+      name: t('pricing.plans.business.title') as string,
+      description: t('pricing.plans.business.description') as string,
+      price: normalizePriceForJsonLd(t('pricing.plans.business.price') as string),
+    },
+    {
+      name: t('pricing.plans.pro.title') as string,
+      description: t('pricing.plans.pro.description') as string,
+      price: normalizePriceForJsonLd(t('pricing.plans.pro.price') as string),
+    },
+    {
+      name: t('pricing.plans.flex.title') as string,
+      description: t('pricing.plans.flex.description') as string,
+      price: normalizePriceForJsonLd(t('pricing.plans.flex.price') as string),
+    },
+  ];
+  return {
+    "@context": "https://schema.org",
+    "@type": "Product",
+    "name": "Layanify Plans",
+    "brand": {
+      "@type": "Brand",
+      "name": "Layanify"
+    },
+    "hasOfferCatalog": {
+      "@type": "OfferCatalog",
+      "name": "Pricing Plans",
+      "itemListElement": plans.map(p => ({
+        "@type": "Offer",
+        "name": p.name,
+        "description": p.description,
+        "priceCurrency": "IDR",
+        "price": p.price
+      }))
+    }
+  };
+});
 </script>
 
 <template>
@@ -181,9 +291,10 @@ const featureTable = computed(() => [
 
       <!-- Pricing Toggle -->
       <div class="max-w-4xl mx-auto mb-16">
-        <Tabs v-model="activeTab" class="w-full">
-          <TabsList class="grid w-full grid-cols-2 mb-8">
+        <Tabs v-model="activeTab" class="w-full" @update:modelValue="onTabChange">
+          <TabsList class="grid w-full grid-cols-3 mb-8">
             <TabsTrigger value="monthly" class="text-base font-medium">{{ t('pricing.monthly_subscription') }}</TabsTrigger>
+            <TabsTrigger value="yearly" class="text-base font-medium">Yearly (Save 20%)</TabsTrigger>
             <TabsTrigger value="payg" class="text-base font-medium">{{ t('pricing.pay_as_you_go') }}</TabsTrigger>
           </TabsList>
 
@@ -202,6 +313,9 @@ const featureTable = computed(() => [
                 <div v-if="plan.popular === PopularPlan.YES" class="absolute top-0 right-0 bg-gradient-to-l from-primary to-purple-500 text-white text-xs font-bold px-3 py-1 rounded-bl-lg z-10">
                   {{ plan.highlight }}
                 </div>
+                <div v-if="plan.billedAnnually" class="absolute top-0 left-0 text-xs font-bold px-3 py-1 rounded-br-lg z-10 bg-green-600 text-white">
+                  {{ plan.saveBadge }}
+                </div>
 
                 <CardHeader>
                   <CardTitle class="pb-2 text-xl">
@@ -214,6 +328,72 @@ const featureTable = computed(() => [
                     <div class="flex items-baseline gap-2">
                       <span class="text-4xl font-bold">{{ plan.price }}</span>
                       <span class="text-lg text-muted-foreground">{{ plan.period }}</span>
+                    </div>
+                    <div v-if="plan.billedAnnually" class="text-xs text-green-700 dark:text-green-300 font-medium">
+                      Billed annually
+                    </div>
+                  </div>
+                </CardHeader>
+
+                <CardContent class="flex">
+                  <ul class="space-y-3 w-full">
+                    <li
+                      v-for="benefit in plan.benefitList"
+                      :key="benefit"
+                      class="flex items-start text-base"
+                    >
+                      <Check class="text-primary mr-2 mt-0.5 flex-shrink-0" />
+                      <span>{{ benefit }}</span>
+                    </li>
+                  </ul>
+                </CardContent>
+
+                <CardFooter>
+                  <Button
+                    :variant="plan.buttonVariant === 'outline' ? 'outline' : (plan.popular === PopularPlan.NO ? 'secondary' : 'default')"
+                    class="w-full text-base py-3"
+                    :class="{ 'bg-gradient-to-r from-primary to-purple-500 hover:from-primary/90 hover:to-purple-500/90': plan.popular === PopularPlan.YES }"
+                  >
+                    {{ plan.buttonText }}
+                  </Button>
+                </CardFooter>
+              </Card>
+            </div>
+          </TabsContent>
+
+          <!-- Yearly Plans (same grid; monthlyPlans marks billedAnnually and discounted) -->
+          <TabsContent value="yearly" class="mt-0">
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+              <Card
+                v-for="plan in monthlyPlans"
+                :key="plan.title"
+                :class="{
+                  'drop-shadow-xl shadow-black/10 dark:shadow-white/10 border-[1.5px] border-primary lg:scale-[1.05] relative overflow-hidden transition-all duration-300 hover:scale-[1.02]': plan.popular === PopularPlan.YES,
+                  'bg-card border-border hover:shadow-lg transition-all duration-300': plan.popular === PopularPlan.NO
+                }"
+              >
+                <!-- Popular Badge -->
+                <div v-if="plan.popular === PopularPlan.YES" class="absolute top-0 right-0 bg-gradient-to-l from-primary to-purple-500 text-white text-xs font-bold px-3 py-1 rounded-bl-lg z-10">
+                  {{ plan.highlight }}
+                </div>
+                <div v-if="plan.billedAnnually" class="absolute top-0 left-0 text-xs font-bold px-3 py-1 rounded-br-lg z-10 bg-green-600 text-white">
+                  {{ plan.saveBadge }}
+                </div>
+
+                <CardHeader>
+                  <CardTitle class="pb-2 text-xl">
+                    {{ plan.title }}
+                  </CardTitle>
+                  <CardDescription class="pb-4 text-base">{{ plan.description }}</CardDescription>
+                  
+                  <!-- Price Display -->
+                  <div class="space-y-2">
+                    <div class="flex items-baseline gap-2">
+                      <span class="text-4xl font-bold">{{ plan.price }}</span>
+                      <span class="text-lg text-muted-foreground">{{ plan.period }}</span>
+                    </div>
+                    <div v-if="plan.billedAnnually" class="text-xs text-green-700 dark:text-green-300 font-medium">
+                      Billed annually
                     </div>
                   </div>
                 </CardHeader>
@@ -327,6 +507,7 @@ const featureTable = computed(() => [
                   :min="10"
                   :step="1"
                   class="w-full"
+                  @update:modelValue="() => trackEvent('roi_slider_change', { daily: dailyMessages[0] })"
                 />
                 <div class="flex justify-between text-sm text-muted-foreground mt-2">
                   <span>10</span>
@@ -470,4 +651,8 @@ const featureTable = computed(() => [
       </section>
     </div>
   </section>
+  <!-- JSON-LD for Product/Service -->
+  <component :is="'script'" type="application/ld+json">
+    {{ JSON.stringify(productJsonLd) }}
+  </component>
 </template>

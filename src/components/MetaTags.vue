@@ -101,5 +101,14 @@ const metaTags = computed(() => {
         }
       }) }}
     </component>
+    <component :is="'script'" type="application/ld+json">
+      {{ JSON.stringify({
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "name": "Layanify",
+        "url": "https://layanify.com",
+        "logo": "https://layanify.com/layanify-dark.jpg"
+      }) }}
+    </component>
   </div>
 </template>

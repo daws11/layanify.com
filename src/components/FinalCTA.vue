@@ -2,8 +2,13 @@
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Clock, Users, TrendingUp } from "lucide-vue-next";
 import { useLocale } from "@/composables/useLocale";
+import { trackEvent } from "@/lib/utils";
 
 const { t } = useLocale();
+
+const onFinalCtaClick = () => {
+  trackEvent('cta_click', { location: 'final_cta' });
+};
 </script>
 
 <template>
@@ -46,7 +51,7 @@ const { t } = useLocale();
 
       <!-- Primary CTA Button -->
       <div class="mb-6">
-        <Button size="lg" class="text-lg px-8 py-6 bg-gradient-to-r from-primary to-purple-500 hover:from-primary/90 hover:to-purple-500/90 group">
+        <Button size="lg" class="text-lg px-8 py-6 bg-gradient-to-r from-primary to-purple-500 hover:from-primary/90 hover:to-purple-500/90 group" @click="onFinalCtaClick">
           {{ t('cta.button') }}
           <ArrowRight 
             class="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" 
