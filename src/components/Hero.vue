@@ -115,7 +115,7 @@ const onPrimaryCtaClick = () => {
             </div>
             <div class="flex items-center gap-1.5">
               <CheckCircle2 class="w-4 h-4 text-green-500" />
-              <span>Free Foreverl</span>
+              <span>Free Forever!</span>
             </div>
           </div>
         </div>
