@@ -26,7 +26,7 @@ import {
 import { Button } from "@/components/ui/button";
 import { Separator } from "@/components/ui/separator";
 
-import { ChevronsDown, Menu } from "lucide-vue-next";
+import { Menu } from "lucide-vue-next";
 
 import ToggleTheme from "./ToggleTheme.vue";
 import LanguageSwitcher from "./LanguageSwitcher.vue";
@@ -98,162 +98,162 @@ const localizedFeatureList = computed(() =>
 
 <template>
   <header
-    :class="{
-      'shadow-light': mode === 'light',
-      'shadow-dark': mode === 'dark',
-      'w-full max-w-screen-xl top-0 mx-auto sticky border z-40 rounded-none sm:rounded-2xl flex justify-between items-center px-3 sm:px-4 py-2 bg-card/80 backdrop-blur supports-backdrop-blur:bg-card/60 shadow-md': true,
-    }"
+    class="sticky top-4 z-40 w-full max-w-screen-xl mx-auto"
   >
-    <router-link
-      :to="getLocalizedPath('/')"
-      class="font-bold text-lg flex items-center"
-    >
-      <img
-        src="../assets/logo.png"
-        alt="Logo"
-        class=" mt-2 w-9 h-9 mr-2 "
-      />
-      <span class="hidden sm:inline">{{ t('navigation.logo') }}</span></router-link
-    >
-    <!-- Mobile -->
-    <div class="flex items-center xl:hidden">
-      <Sheet v-model:open="isOpen">
-        <SheetTrigger as-child>
-          <Menu
-            @click="isOpen = true"
-            class="cursor-pointer"
+    <div class="mx-4 rounded-2xl border border-white/10 bg-white/70 dark:bg-black/70 backdrop-blur-md shadow-sm px-4 py-3 flex justify-between items-center transition-all duration-300 hover:shadow-md">
+      <router-link
+        :to="getLocalizedPath('/')"
+        class="font-bold text-lg flex items-center gap-2"
+      >
+        <div class="bg-gradient-to-tr from-green-600 to-emerald-400 rounded-lg p-1.5">
+          <img
+            src="../assets/logo.png"
+            alt="Logo"
+            class="w-6 h-6 invert brightness-0"
           />
-        </SheetTrigger>
+        </div>
+        <span class="hidden sm:inline tracking-tight">{{ t('navigation.logo') }}</span>
+      </router-link>
 
-        <SheetContent
-          side="left"
-          class="flex flex-col justify-between rounded-tr-2xl rounded-br-2xl bg-card"
-        >
-          <div>
-            <SheetHeader class="mb-4 ml-4">
-              <SheetTitle class="flex items-center">
-                <router-link
-                  :to="getLocalizedPath('/')"
-                  class="flex items-center"
-                >
-                  <ChevronsDown
-                    class="bg-gradient-to-tr from-primary/70 via-primary to-primary/70 rounded-lg size-9 mr-2 border text-white"
-                  />
+      <!-- Mobile -->
+      <div class="flex items-center xl:hidden">
+        <Sheet v-model:open="isOpen">
+          <SheetTrigger as-child>
+            <Button variant="ghost" size="icon" class="hover:bg-transparent">
+              <Menu class="w-6 h-6" />
+            </Button>
+          </SheetTrigger>
+
+          <SheetContent
+            side="right"
+            class="flex flex-col justify-between w-[300px] sm:w-[400px]"
+          >
+            <div>
+              <SheetHeader class="mb-8 text-left">
+                <SheetTitle class="flex items-center gap-2">
+                  <div class="bg-gradient-to-tr from-green-600 to-emerald-400 rounded-lg p-1.5">
+                    <img
+                      src="../assets/logo.png"
+                      alt="Logo"
+                      class="w-6 h-6 invert brightness-0"
+                    />
+                  </div>
                   {{ t('navigation.logo') }}
-                </router-link>
-              </SheetTitle>
-            </SheetHeader>
+                </SheetTitle>
+              </SheetHeader>
 
-            <div class="flex flex-col gap-2">
+              <div class="flex flex-col gap-2">
+                <Button
+                  v-for="{ href, label } in localizedRouteList"
+                  :key="href"
+                  as-child
+                  variant="ghost"
+                  class="justify-start text-base font-medium h-12"
+                >
+                  <a
+                    @click="isOpen = false"
+                    :href="href"
+                    v-if="href.startsWith('#')"
+                  >
+                    {{ label }}
+                  </a>
+                  <router-link
+                    :to="href"
+                    @click="isOpen = false"
+                    v-else
+                  >
+                    {{ label }}
+                  </router-link>
+                </Button>
+              </div>
+            </div>
+
+            <SheetFooter class="flex-col sm:flex-col justify-start items-start gap-4">
+              <Separator />
+              <div class="flex items-center justify-between w-full">
+                <LanguageSwitcher />
+                <ToggleTheme />
+              </div>
+              <Button class="w-full bg-primary font-semibold" as-child>
+                 <a href="#hero">{{ t('navigation.sign_up_free') }}</a>
+              </Button>
+            </SheetFooter>
+          </SheetContent>
+        </Sheet>
+      </div>
+
+      <!-- Desktop -->
+      <NavigationMenu class="hidden xl:block">
+        <NavigationMenuList>
+          <NavigationMenuItem>
+            <NavigationMenuTrigger class="bg-transparent text-sm font-medium">
+              {{ t('navigation.features') }}
+            </NavigationMenuTrigger>
+            <NavigationMenuContent>
+              <div class="grid w-[600px] grid-cols-2 gap-5 p-4">
+                <div class="relative overflow-hidden rounded-md bg-gradient-to-b from-muted/50 to-muted p-6 no-underline outline-none select-none">
+                  <div class="mb-2 mt-4 text-lg font-medium">
+                    Layanify AI
+                  </div>
+                  <p class="text-sm leading-tight text-muted-foreground">
+                    Automate your customer service and bookings with the power of AI.
+                  </p>
+                </div>
+                <ul class="flex flex-col gap-2">
+                  <li
+                    v-for="{ title, description } in localizedFeatureList"
+                    :key="title"
+                    class="rounded-md p-3 text-sm hover:bg-muted transition-colors"
+                  >
+                    <p class="mb-1 font-semibold leading-none text-foreground">
+                      {{ title }}
+                    </p>
+                    <p class="line-clamp-2 text-muted-foreground text-xs">
+                      {{ description }}
+                    </p>
+                  </li>
+                </ul>
+              </div>
+            </NavigationMenuContent>
+          </NavigationMenuItem>
+
+          <NavigationMenuItem v-for="{ href, label } in localizedRouteList" :key="href">
+            <NavigationMenuLink asChild>
               <Button
-                v-for="{ href, label } in localizedRouteList"
-                :key="href"
                 as-child
                 variant="ghost"
-                class="justify-start text-base"
+                class="justify-start text-sm font-medium bg-transparent hover:bg-secondary/50"
               >
-                <a
-                  @click="isOpen = false"
-                  :href="href"
-                  v-if="href.startsWith('#')"
-                >
+                <a :href="href" v-if="href.startsWith('#')">
                   {{ label }}
                 </a>
-                <router-link
-                  :to="href"
-                  @click="isOpen = false"
-                  v-else
-                >
+                <router-link :to="href" v-else>
                   {{ label }}
                 </router-link>
               </Button>
-            </div>
-          </div>
+            </NavigationMenuLink>
+          </NavigationMenuItem>
+        </NavigationMenuList>
+      </NavigationMenu>
 
-          <SheetFooter class="flex-col sm:flex-col justify-start items-start">
-            <Separator class="mb-2" />
+      <div class="hidden xl:flex items-center gap-4">
+        <LanguageSwitcher />
+        <ToggleTheme />
 
-            <LanguageSwitcher />
-            <ToggleTheme />
-          </SheetFooter>
-        </SheetContent>
-      </Sheet>
-    </div>
-
-    <!-- Desktop -->
-    <NavigationMenu class="hidden xl:block">
-      <NavigationMenuList>
-        <NavigationMenuItem>
-          <NavigationMenuTrigger class="bg-card text-sm xl:text-base">
-            {{ t('navigation.features') }}
-          </NavigationMenuTrigger>
-          <NavigationMenuContent>
-            <div class="grid w-[600px] grid-cols-2 gap-5 p-4">
-              <img
-                src="https://www.radix-vue.com/logo.svg"
-                alt="Beach"
-                class="h-full w-full rounded-md object-cover"
-              />
-              <ul class="flex flex-col gap-2">
-                <li
-                  v-for="{ title, description } in localizedFeatureList"
-                  :key="title"
-                  class="rounded-md p-3 text-sm hover:bg-muted"
-                >
-                  <p class="mb-1 font-semibold leading-none text-foreground">
-                    {{ title }}
-                  </p>
-                  <p class="line-clamp-2 text-muted-foreground">
-                    {{ description }}
-                  </p>
-                </li>
-              </ul>
-            </div>
-          </NavigationMenuContent>
-        </NavigationMenuItem>
-
-        <NavigationMenuItem v-for="{ href, label } in localizedRouteList" :key="href">
-          <NavigationMenuLink asChild>
-            <Button
-              as-child
-              variant="ghost"
-              class="justify-start text-sm xl:text-base"
-            >
-              <a :href="href" v-if="href.startsWith('#')">
-                {{ label }}
-              </a>
-              <router-link :to="href" v-else>
-                {{ label }}
-              </router-link>
-            </Button>
-          </NavigationMenuLink>
-        </NavigationMenuItem>
-      </NavigationMenuList>
-    </NavigationMenu>
-
-    <div class="hidden xl:flex items-center gap-2 sm:gap-3 lg:gap-4">
-      <LanguageSwitcher />
-      <ToggleTheme />
-
-      <Button
-        as-child
-        size="sm"
-        class="bg-green-600 hover:bg-green-700"
-      >
-        <a href="#hero">
-          {{ t('navigation.sign_up_free') }}
-        </a>
-      </Button>
+        <Button
+          as-child
+          size="sm"
+          class="bg-primary hover:bg-primary/90 font-semibold shadow-lg shadow-primary/20 transition-all hover:scale-105"
+        >
+          <a href="#hero">
+            {{ t('navigation.sign_up_free') }}
+          </a>
+        </Button>
+      </div>
     </div>
   </header>
 </template>
 
 <style scoped>
-.shadow-light {
-  box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.085);
-}
-
-.shadow-dark {
-  box-shadow: inset 0 0 5px rgba(255, 255, 255, 0.141);
-}
+/* Removed custom shadow classes as we use tailwind utilities now */
 </style>

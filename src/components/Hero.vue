@@ -1,13 +1,12 @@
 <script setup lang="ts">
-import { useColorMode } from "@vueuse/core";
 import { ref, onMounted, computed } from "vue";
 import { useLocale } from "@/composables/useLocale";
 import { trackEvent } from "@/lib/utils";
-import Cubes from "@/components/animations/Cubes.vue";
-const mode = useColorMode();
+import DashboardPreview from "@/components/DashboardPreview.vue";
+import PhoneMockup from "@/components/PhoneMockup.vue";
 
 import { Button } from "@/components/ui/button";
-import { ArrowRight, CheckCircle } from "lucide-vue-next";
+import { ArrowRight, CheckCircle2 } from "lucide-vue-next";
 
 const { t } = useLocale();
 
@@ -31,19 +30,22 @@ const heroTitles = computed(() => [
   }
 ]);
 
-// Select a random title on component mount
-const currentTitle = ref(heroTitles.value[0]);
+// Store the selected title index (not the title object itself)
+const selectedTitleIndex = ref(0);
+
+// Computed property that derives the current title from the index
+// This ensures reactivity when language changes
+const currentTitle = computed(() => heroTitles.value[selectedTitleIndex.value]);
 
 onMounted(() => {
   const params = new URLSearchParams(window.location.search);
   const variant = params.get('v'); // A | B
   if (variant === 'A') {
-    currentTitle.value = heroTitles.value[0];
+    selectedTitleIndex.value = 0;
   } else if (variant === 'B') {
-    currentTitle.value = heroTitles.value[1];
+    selectedTitleIndex.value = 1;
   } else {
-    const randomIndex = Math.floor(Math.random() * heroTitles.value.length);
-    currentTitle.value = heroTitles.value[randomIndex];
+    selectedTitleIndex.value = Math.floor(Math.random() * heroTitles.value.length);
   }
 });
 
@@ -55,129 +57,103 @@ const onPrimaryCtaClick = () => {
 </script>
 
 <template>
-  <section class="container">
-    <div
-      class="lg:max-w-screen-xl mx-auto py-20 md:py-32 relative"
-    >
-      <!-- Grid container with 2 columns on large screens -->
-      <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center">
+  <section class="container relative overflow-hidden">
+    <div class="max-w-screen-xl mx-auto pt-20 pb-16 md:pt-32 md:pb-24">
+      <!-- Grid container -->
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
         
         <!-- Left Column: Text Content -->
-        <div class="space-y-6 relative z-10">
+        <div class="space-y-8 relative z-10 text-center lg:text-left">
           <!-- Social Proof Badge -->
-          <div class="flex items-center justify-center lg:justify-start gap-2 text-sm text-muted-foreground">
-            <CheckCircle class="w-4 h-4 text-green-500" />
+          <div class="animate-in fade-in slide-in-from-bottom-4 duration-700 inline-flex items-center gap-2 px-3 py-1 rounded-full bg-secondary/50 backdrop-blur-sm border border-border text-sm text-muted-foreground">
+            <span class="relative flex h-2 w-2">
+              <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
+              <span class="relative inline-flex rounded-full h-2 w-2 bg-green-500"></span>
+            </span>
             <span>{{ t('hero.trusted_by') }}</span>
           </div>
 
           <!-- Title -->
-          <div class="text-center lg:text-left">
-            <h1 class="text-3xl lg:text-5xl xl:text-6xl font-bold leading-tight">
+          <div class="space-y-6">
+            <h1 class="animate-in fade-in slide-in-from-bottom-8 duration-700 delay-100 text-4xl sm:text-5xl lg:text-7xl font-bold tracking-tight leading-[1.1] text-balance">
               {{ currentTitle.title }}
-              <span
-                class="text-transparent bg-gradient-to-r from-[#D247BF] to-primary bg-clip-text"
-                >{{ currentTitle.gradient }}
+              <span class="text-transparent bg-gradient-to-r from-green-600 to-emerald-400 bg-clip-text">
+                {{ currentTitle.gradient }}
               </span>
             </h1>
+            <p class="animate-in fade-in slide-in-from-bottom-8 duration-700 delay-200 mt-6 text-lg sm:text-xl text-muted-foreground leading-relaxed max-w-2xl mx-auto lg:mx-0 text-balance">
+              {{ t('hero.description') }}
+            </p>
           </div>
 
           <!-- CTAs -->
-          <div class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
-            <Button class="font-bold group/arrow bg-green-600 hover:bg-green-700" @click="onPrimaryCtaClick">
+          <div class="animate-in fade-in slide-in-from-bottom-8 duration-700 delay-300 flex flex-col sm:flex-row gap-4 justify-center lg:justify-start items-center">
+            <Button 
+              size="lg" 
+              class="font-semibold text-base px-8 h-12 bg-primary hover:bg-primary/90 shadow-lg shadow-primary/20 transition-all hover:scale-105" 
+              @click="onPrimaryCtaClick"
+            >
               {{ t('hero.start_free') }}
-              <ArrowRight
-                class="size-5 ml-2 group-hover/arrow:translate-x-1 transition-transform"
-              />
+              <ArrowRight class="w-4 h-4 ml-2" />
             </Button>
 
             <Button
               as-child
-              variant="secondary"
-              class="font-bold"
+              variant="ghost"
+              size="lg"
+              class="font-semibold text-base h-12"
             >
               <a href="#pricing">{{ t('hero.see_pricing') }}</a>
             </Button>
           </div>
 
           <!-- Risk reversal subtext -->
-          <p class="text-sm text-muted-foreground text-center lg:text-left">
-            {{ t('how_it_works.setup_benefits') }}
-          </p>
+          <div class="animate-in fade-in slide-in-from-bottom-8 duration-700 delay-500 flex items-center justify-center lg:justify-start gap-4 text-sm text-muted-foreground">
+            <div class="flex items-center gap-1.5">
+              <CheckCircle2 class="w-4 h-4 text-green-500" />
+              <span>No credit card</span>
+            </div>
+            <div class="flex items-center gap-1.5">
+              <CheckCircle2 class="w-4 h-4 text-green-500" />
+              <span>14-day free trial</span>
+            </div>
+          </div>
         </div>
 
-        <!-- Right Column: Demo Image -->
-        <div class="relative group">
-          <!-- gradient shadow -->
-          <div
-            class="absolute -top-6 right-12 w-[90%] h-12 lg:h-[80%] bg-primary/50 blur-3xl rounded-full img-shadow-animation"
-          ></div>
+        <!-- Right Column: Preview (Phone on mobile, Dashboard on desktop) -->
+        <div class="relative group perspective-1000 animate-in fade-in zoom-in-95 duration-1000 delay-200">
+          
+          <!-- Phone Mockup for Mobile/Tablet (< lg) -->
+          <div class="lg:hidden">
+            <PhoneMockup />
+          </div>
 
-          <img
-            class="w-full rounded-lg relative leading-none flex items-center border border-t-2 border-t-primary/30 img-border-animation"
-            :src="
-              mode == 'light' ? 'layanify-light.jpg' : 'layanify-dark.jpg'
-            "
-            alt="AI dashboard handling customer messages automatically"
-            fetchpriority="high"
-            width="1200"
-            height="675"
-          />
-
-          <!-- gradient effect img -->
-          <div
-            class="absolute bottom-0 left-0 w-full h-20 md:h-28 bg-gradient-to-b from-background/0 via-background/50 to-background rounded-lg"
-          ></div>
+          <!-- Dashboard Preview for Desktop (>= lg) -->
+          <div class="hidden lg:block">
+            <!-- Glow effect -->
+            <div class="absolute -inset-4 bg-gradient-to-r from-green-500/20 to-emerald-500/20 rounded-3xl blur-3xl opacity-50 group-hover:opacity-70 transition-opacity duration-500"></div>
+            
+            <div class="relative rounded-2xl shadow-premium overflow-hidden bg-card border border-border/50 transition-transform duration-500 hover:scale-[1.01] hover:rotate-y-2">
+              <div class="absolute top-0 left-0 w-full h-full bg-gradient-to-tr from-white/5 to-transparent pointer-events-none z-10"></div>
+              
+              <!-- Dashboard Component -->
+              <div class="aspect-[16/9] w-full bg-muted/10">
+                <DashboardPreview />
+              </div>
+            </div>
+          </div>
         </div>
-      </div>
-
-      <!-- Left cubes ornament (hidden on mobile) -->
-      <div class="pointer-events-none absolute top-0 left-0 hidden lg:block z-0">
-        <Cubes class="w-[380px] h-[380px] xl:w-[420px] xl:h-[420px] 2xl:w-[480px] 2xl:h-[480px] opacity-80" :count="18" />
-      </div>
-
-      <!-- Right cubes ornament (hidden on mobile) -->
-      <div class="pointer-events-none absolute top-0 right-0 hidden lg:block z-0">
-        <Cubes class="w-[380px] h-[380px] xl:w-[420px] xl:h-[420px] 2xl:w-[480px] 2xl:h-[480px] opacity-80" :count="18" />
       </div>
     </div>
   </section>
 </template>
 
 <style scoped>
-.img-shadow-animation {
-  animation-name: img-shadow-animation;
-  animation-iteration-count: infinite;
-  animation-duration: 2s;
-  animation-timing-function: linear;
-  animation-direction: alternate;
+.perspective-1000 {
+  perspective: 1000px;
 }
-
-.img-border-animation {
-  animation-name: img-border-animation;
-  animation-iteration-count: infinite;
-  animation-duration: 2s;
-  animation-timing-function: linear;
-  animation-direction: alternate;
-}
-
-@keyframes img-shadow-animation {
-  from {
-    opacity: 0.5;
-    transform: translateY(30px);
-  }
-
-  to {
-    opacity: 1;
-    transform: translateY(0px);
-  }
-}
-@keyframes img-border-animation {
-  from {
-    @apply border-t-primary/10;
-  }
-
-  to {
-    @apply border-t-primary/60;
-  }
+.rotate-y-2 {
+  transform: rotateY(-2deg);
 }
 </style>
+

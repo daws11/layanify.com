@@ -55,23 +55,23 @@
   "hero": {
     "trusted_by": "Trusted by 50+ Businesses",
     "titles": {
-      "title1": "Stop Losing Customers to Slow Replies.",
-      "gradient1": "Your Business Deserves Better Response Time.",
-      "title2": "The 24/7 Employee That Costs Less Than Your Daily Coffee.",
-      "gradient2": "Affordable AI That Never Sleeps.",
-      "title3": "Focus on Your Guests, Not Your Phone.",
+      "title1": "Stop Losing Customers to",
+      "gradient1": "Slow Replies.",
+      "title2": "The 24/7 Employee That Costs",
+      "gradient2": "Less Than Coffee.",
+      "title3": "Focus on Your Guests,",
       "gradient3": "Let AI Handle the Rest.",
-      "title4": "Your AI Never Sleeps, So Your Bookings Don't Stop.",
-      "gradient4": "Capture Every Opportunity, 24/7."
+      "title4": "Capture Every Booking,",
+      "gradient4": "Even While You Sleep."
     },
-    "description": "Automate WhatsApp & Instagram customer service, handle bookings, and answer FAQs 24/7. All with a pay-as-you-go plan. Start free.",
-    "start_free": "Start Free for 50 Messages",
-    "see_pricing": "See Pricing"
+    "description": "Automate your WhatsApp & Instagram customer service with AI. Handle bookings, answer FAQs, and grow your business 24/7. Start for free today.",
+    "start_free": "Start Free Trial",
+    "see_pricing": "View Pricing"
   },
   "problem": {
-    "title": "Does This Sound ",
-    "title_highlight": "Familiar?",
-    "subtitle": "The hidden costs of running your hospitality business in paradise",
+    "title": "Is Your Business",
+    "title_highlight": "Leaking Revenue?",
+    "subtitle": "The hidden costs of manual customer service are higher than you think.",
     "points": [
       "Answering \"is it available?\" at 2 AM",
       "Losing sleep while customers expect instant responses",
@@ -80,9 +80,9 @@
       "Juggling multiple platforms",
       "Switching between WhatsApp, Instagram, and spreadsheets all day",
       "No time to grow your business",
-      "Stuck answering messages instead of focusing on what matters"
+      "Stuck answering messages instead of focusing on strategy"
     ],
-    "cta_question": "What if you could reclaim 10+ hours per week while increasing bookings?"
+    "cta_question": "Reclaim 10+ hours per week while increasing bookings."
   },
   "how_it_works": {
     "title": "Your AI Receptionist, Ready in ",
@@ -107,29 +107,29 @@
   },
   "features": {
     "title": "More Than Just a Chatbot.",
-    "title_highlight": "It's Your Business Partner.",
-    "subtitle": "Stop losing customers to slow responses and start growing your business with AI that works as hard as you do.",
+    "title_highlight": "It's Your Growth Engine.",
+    "subtitle": "Stop losing customers to slow responses. Start growing your business with AI that works as hard as you do.",
     "booking": {
       "title": "Smart Booking Engine",
       "description": "Automatically handles complex bookings, deposits, and confirmations, so you don't have to.",
-      "benefit": "Save 10+ hours per week on manual booking management"
+      "benefit": "Save 10+ hours/week"
     },
     "memory": {
-      "title": "A Memory Like an Elephant",
+      "title": "Intelligent Memory",
       "description": "Our AI remembers past conversations and your entire business knowledge base, providing consistent and accurate answers.",
-      "benefit": "Never repeat yourself again - perfect consistency every time"
+      "benefit": "Zero training required"
     },
     "stats": {
       "availability": "24/7",
       "service": "Customer Service",
-      "response_time": "Response Time",
-      "response_value": "< 5 seconds",
+      "response_time": "Avg Response",
+      "response_value": "< 2 sec",
       "accuracy": "Accuracy",
-      "accuracy_value": "95%+",
+      "accuracy_value": "99.9%",
       "languages": "Languages",
       "languages_value": "ID + EN"
     },
-    "live_chat_notice": "Try our live chat widget in the corner → Experience the AI yourself"
+    "live_chat_notice": "Try our live chat widget in the corner to experience the AI."
   },
   "testimonials": {
     "title": "What Our Customers Say",
@@ -385,5 +385,37 @@
   "language_switcher": {
     "english": "English",
     "indonesian": "Indonesian"
+  },
+  "chat_messages": {
+    "conversations": [
+      {
+        "customer": "Can I book a haircut for tomorrow?",
+        "aiResponse": "Sure! I've booked your haircut for tomorrow at 3pm. Confirmation sent! ✓"
+      },
+      {
+        "customer": "What are your hours?",
+        "aiResponse": "We're open Mon-Fri 9am-6pm, Sat 10am-4pm 🕐"
+      },
+      {
+        "customer": "Do you have availability this weekend?",
+        "aiResponse": "Yes! We have slots available Saturday 2pm and 4pm. Which works better? 📅"
+      },
+      {
+        "customer": "How much for a haircut + coloring?",
+        "aiResponse": "Haircut is $30 and coloring starts at $60. Total: $90. Book now? 💇"
+      },
+      {
+        "customer": "Can I reschedule my appointment?",
+        "aiResponse": "Of course! When would you like to reschedule to? I can help you find a new time ⏰"
+      },
+      {
+        "customer": "Is parking available?",
+        "aiResponse": "Yes! Free parking is available in the lot behind our building 🅿️"
+      },
+      {
+        "customer": "Do you accept walk-ins?",
+        "aiResponse": "We do, but appointments are recommended to avoid wait times. Want to book now? 📱"
+      }
+    ]
   }
 }

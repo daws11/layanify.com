@@ -29,39 +29,39 @@ const painPoints = [
 </script>
 
 <template>
-  <section class="container py-16 sm:py-24 bg-muted/30">
-    <div class="max-w-4xl mx-auto">
-      <div class="text-center mb-12">
-        <h2 class="text-3xl md:text-4xl font-bold mb-4">
+  <section class="container py-20 md:py-32">
+    <div class="max-w-5xl mx-auto">
+      <div class="text-center mb-16">
+        <h2 class="text-3xl md:text-5xl font-bold mb-6 tracking-tight text-balance">
           {{ t('problem.title') }}
-          <span class="text-transparent bg-gradient-to-r from-[#D247BF] to-primary bg-clip-text">
+          <span class="text-transparent bg-gradient-to-r from-red-500 to-orange-500 bg-clip-text">
             {{ t('problem.title_highlight') }}
           </span>
         </h2>
-        <p class="text-lg text-muted-foreground">
+        <p class="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto leading-relaxed text-balance">
           {{ t('problem.subtitle') }}
         </p>
       </div>
 
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8">
         <div
           v-for="{ icon, titleKey, descriptionKey } in painPoints"
           :key="titleKey"
-          class="bg-background rounded-lg p-6 border border-border shadow-sm hover:shadow-md transition-shadow"
+          class="group bg-card hover:bg-secondary/50 rounded-2xl p-8 border border-border/50 transition-all duration-300 hover:border-border"
         >
-          <div class="flex items-start gap-4">
-            <div class="bg-red-100 dark:bg-red-900/20 p-2 rounded-lg">
-              <component :is="icon" class="w-6 h-6 text-red-600 dark:text-red-400" />
+          <div class="flex items-start gap-6">
+            <div class="bg-secondary group-hover:bg-background p-3 rounded-xl transition-colors">
+              <component :is="icon" class="w-6 h-6 text-foreground/80" />
             </div>
             <div>
-              <h3 class="font-semibold text-lg mb-2">{{ t(titleKey) }}</h3>
-              <p class="text-muted-foreground">{{ t(descriptionKey) }}</p>
+              <h3 class="font-semibold text-xl mb-3 tracking-tight">{{ t(titleKey) }}</h3>
+              <p class="text-muted-foreground leading-relaxed">{{ t(descriptionKey) }}</p>
             </div>
           </div>
         </div>
       </div>
 
-      <div class="mt-8 text-center">
+      <div class="mt-16 text-center">
         <p class="text-lg font-medium text-muted-foreground">
           {{ t('problem.cta_question') }}
         </p>

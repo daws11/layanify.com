@@ -1,6 +1,9 @@
 <script setup lang="ts">
 import { Marquee } from "@selemondev/vue3-marquee";
 import "@selemondev/vue3-marquee/dist/style.css";
+import { useLocale } from "@/composables/useLocale";
+
+const { t } = useLocale();
 
 import {
   Crown,
@@ -71,26 +74,28 @@ const iconMap: Record<
 <template>
   <section
     id="sponsors"
-    class="max-w-[75%] mx-auto pb-24 sm:pb-32"
+    class="container py-12 md:py-20"
   >
-    <h2 class="text-lg md:text-xl text-center mb-6">Di Dukung Oleh Berbagai Macam Komunitas</h2>
+    <h2 class="text-lg font-medium text-center mb-10 text-muted-foreground tracking-wide uppercase opacity-70">
+      {{ t('hero.trusted_by') }}
+    </h2>
 
-    <div class="mx-auto">
+    <div class="mx-auto max-w-5xl">
       <Marquee
-        class="gap-[3rem]"
+        class="gap-[4rem]"
         :pauseOnHover="true"
         :fade="true"
-        innerClassName="gap-[3rem]"
+        innerClassName="gap-[4rem]"
       >
         <div
           v-for="{ icon, name } in sponsors"
           :key="name"
         >
-          <div class="flex items-center text-xl md:text-2xl font-medium">
+          <div class="flex items-center text-xl font-semibold text-muted-foreground/50 hover:text-foreground transition-colors duration-300 grayscale hover:grayscale-0 cursor-default">
             <component
               :is="iconMap[icon]"
-              class="mr-2"
-              stroke-width="3"
+              class="mr-2 w-6 h-6"
+              stroke-width="2.5"
             />
             {{ name }}
           </div>

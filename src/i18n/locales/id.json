@@ -55,23 +55,23 @@
   "hero": {
     "trusted_by": "Dipercaya oleh 50+ Bisnis",
     "titles": {
-      "title1": "Berhenti Kehilangan Pelanggan karena Balasan Lambat.",
-      "gradient1": "Bisnis Anda Layak Mendapatkan Waktu Respons Lebih Baik.",
-      "title2": "Karyawan 24/7 yang Biayanya Lebih Murah dari Kopi Harian Anda.",
-      "gradient2": "AI Terjangkau yang Tidur Pernah Tidur.",
-      "title3": "Fokus pada Tamu Anda, Bukan Ponsel Anda.",
-      "gradient3": "Biarkan AI Menangani sisanya.",
-      "title4": "AI Anda Tidak Pernah Tidur, Jadi Pemesanan Anda Tidak Berhenti.",
-      "gradient4": "Tangkap Setiap Peluang, 24/7."
+      "title1": "Berhenti Kehilangan Pelanggan karena",
+      "gradient1": "Balasan Lambat.",
+      "title2": "Karyawan 24/7 yang Lebih Murah dari",
+      "gradient2": "Kopi Harian Anda.",
+      "title3": "Fokus pada Tamu Anda,",
+      "gradient3": "Biarkan AI Menangani Sisanya.",
+      "title4": "Tangkap Setiap Pemesanan,",
+      "gradient4": "Bahkan Saat Anda Tidur."
     },
-    "description": "Otomatisasi layanan pelanggan WhatsApp & Instagram, tangani pemesanan, dan jawab FAQ 24/7. Semua dengan paket bayar sesuai penggunaan. Mulai gratis.",
-    "start_free": "Mulai Gratis untuk 50 Pesan",
+    "description": "Otomatisasi layanan pelanggan WhatsApp & Instagram dengan AI. Tangani pemesanan, jawab FAQ, dan kembangkan bisnis Anda 24/7. Mulai gratis hari ini.",
+    "start_free": "Mulai Uji Coba Gratis",
     "see_pricing": "Lihat Harga"
   },
   "problem": {
-    "title": "Apakah Ini Terdengar ",
-    "title_highlight": "Familiar?",
-    "subtitle": "Biaya tersembunyi menjalankan bisnis perhotelan Anda di surga",
+    "title": "Apakah Bisnis Anda",
+    "title_highlight": "Kehilangan Pendapatan?",
+    "subtitle": "Biaya tersembunyi dari layanan pelanggan manual lebih tinggi dari yang Anda kira.",
     "points": [
       "Menjawab \"apakah tersedia?\" jam 2 pagi",
       "Kehilangan tidur saat pelanggan mengharapkan respons instan",
@@ -80,9 +80,9 @@
       "Juggling beberapa platform",
       "Berpindah antara WhatsApp, Instagram, dan spreadsheet sepanjang hari",
       "Tidak ada waktu untuk mengembangkan bisnis Anda",
-      "Terjebak menjawab pesan alih-alih fokus pada hal yang penting"
+      "Terjebak menjawab pesan alih-alih fokus pada strategi"
     ],
-    "cta_question": "Bagaimana jika Anda bisa mengembalikan 10+ jam per minggu sambil meningkatkan pemesanan?"
+    "cta_question": "Dapatkan kembali 10+ jam per minggu sambil meningkatkan pemesanan."
   },
   "how_it_works": {
     "title": "Resepsionis AI Anda, Siap dalam ",
@@ -107,29 +107,29 @@
   },
   "features": {
     "title": "Lebih dari Sekadar Chatbot.",
-    "title_highlight": "Ini Mitra Bisnis Anda.",
-    "subtitle": "Berhenti kehilangan pelanggan karena respons lambat dan mulai mengembangkan bisnis Anda dengan AI yang bekerja sekeras Anda.",
+    "title_highlight": "Ini Mesin Pertumbuhan Anda.",
+    "subtitle": "Berhenti kehilangan pelanggan karena respons lambat. Mulai kembangkan bisnis Anda dengan AI yang bekerja sekeras Anda.",
     "booking": {
       "title": "Mesin Pemesanan Cerdas",
       "description": "Secara otomatis menangani pemesanan kompleks, deposit, dan konfirmasi, jadi Anda tidak perlu melakukannya.",
-      "benefit": "Hemat 10+ jam per minggu untuk manajemen pemesanan manual"
+      "benefit": "Hemat 10+ jam/minggu"
     },
     "memory": {
-      "title": "Memori Seperti Gajah",
+      "title": "Memori Cerdas",
       "description": "AI kami mengingat percakapan sebelumnya dan seluruh basis pengetahuan bisnis Anda, memberikan jawaban yang konsisten dan akurat.",
-      "benefit": "Jangan pernah mengulang diri Anda lagi - konsistensi sempurna setiap saat"
+      "benefit": "Tanpa perlu pelatihan"
     },
     "stats": {
       "availability": "24/7",
       "service": "Layanan Pelanggan",
-      "response_time": "Waktu Respons",
-      "response_value": "< 5 detik",
+      "response_time": "Rata-rata Respons",
+      "response_value": "< 2 detik",
       "accuracy": "Akurasi",
-      "accuracy_value": "95%+",
+      "accuracy_value": "99.9%",
       "languages": "Bahasa",
       "languages_value": "ID + EN"
     },
-    "live_chat_notice": "Coba widget live chat kami di pojok → Rasakan AI-nya sendiri"
+    "live_chat_notice": "Coba widget live chat kami di pojok untuk merasakan pengalaman AI."
   },
   "testimonials": {
     "title": "Apa Kata Pelanggan Kami",
@@ -385,5 +385,37 @@
   "language_switcher": {
     "english": "English",
     "indonesian": "Bahasa Indonesia"
+  },
+  "chat_messages": {
+    "conversations": [
+      {
+        "customer": "Bisa booking potong rambut untuk besok?",
+        "aiResponse": "Tentu! Saya sudah booking potong rambut Anda untuk besok jam 3 sore. Konfirmasi terkirim! ✓"
+      },
+      {
+        "customer": "Jam buka sampai jam berapa?",
+        "aiResponse": "Kami buka Senin-Jumat 9 pagi-6 sore, Sabtu 10 pagi-4 sore 🕐"
+      },
+      {
+        "customer": "Apakah ada slot tersedia akhir pekan ini?",
+        "aiResponse": "Ya! Kami punya slot di hari Sabtu jam 2 siang dan 4 sore. Mana yang lebih cocok? 📅"
+      },
+      {
+        "customer": "Berapa biaya potong rambut + pewarnaan?",
+        "aiResponse": "Potong rambut Rp 150rb dan pewarnaan mulai dari Rp 300rb. Total: Rp 450rb. Booking sekarang? 💇"
+      },
+      {
+        "customer": "Bisa reschedule appointment saya?",
+        "aiResponse": "Tentu saja! Kapan Anda ingin reschedule? Saya bisa bantu carikan waktu baru ⏰"
+      },
+      {
+        "customer": "Apakah tersedia parkir?",
+        "aiResponse": "Ya! Parkir gratis tersedia di area belakang gedung kami 🅿️"
+      },
+      {
+        "customer": "Terima walk-in kah?",
+        "aiResponse": "Kami terima, tapi sebaiknya booking dulu untuk menghindari antrian. Mau booking sekarang? 📱"
+      }
+    ]
   }
 }
